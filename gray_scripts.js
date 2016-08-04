@@ -1,13 +1,6 @@
 (function($) {
 	$(document).ready(function(){
 
-		//get rid of the ability to use return key to submit
-		$('button').keypress(
-		    function(event){
-		     if (event.which == '13') {
-		        event.preventDefault();
-		      }
-		});
 
 
 		jQuery.fn.extend({
@@ -36,7 +29,7 @@
 
 
 		//initialize variables
-		var $step=0;
+		var $step= 0;
 		var $type = '';
 
 		//=======================================
@@ -53,24 +46,25 @@
 					// toggle the form window up and down to display step0, i.e. start of the form
 					$('.form-window').slideToggle("fast");
 
-					//swtich between the share button and button to escape form
-					//$(this).toggleClass("share-btn-dim");
-
 					if($step==0){
 						$('#step0').fadeIn('fast'); //start with the post-type icons for selection
 					}
 
-					if($step==5){
-						$('.next-btn').show(); //show the next button if it was hidden on final step (step5)
+					// if close the form on the 'preview' step
+					if($step=5){
+						$('#step5_'+$type.toString()).hide(); // hide the 'preview' step
+					}
+
+					// if close the form on the submit step
+					if($step=6){
+						$('#step6_'+$type.toString()).hide(); // hide the 'preview' step
 					}
 
 					//reset the form
 					if($step > 0){
-						$('#step'+$step.toString()+"_"+$type.toString()).hide('fast'); //hide form window if toggled mid-form
 						$('#add-'+$type+'-form').hide('fast').find("input[type=text], textarea").val(""); //reset form fields
 						$('#step0').delay('slow').fadeIn('fast'); //start with the post-type icons for selection
 						$('.post-type-desc').show();//bring back the post description box
-						$('.prev-btn').removeClass('prev-btn-submit'); // if was on submit page, remove  "go back" styling unique to step 5
 						$(".share-button").text("Post") // reset share button
 
 						//reset validation styling
@@ -79,13 +73,9 @@
 						$('#step3_'+$type.toString()).find("input").removeClass("input-invalid");
 						$('#step4_'+$type.toString()).find("input").removeClass("input-invalid");
 
-
-
-						$type ='';
-						$step= $step - $step;
-						//$(".share-button").text($step);//test step value
+						$step= 0;
+						type='';
 					}
-
 				});
 
 						//=======================================
@@ -162,132 +152,139 @@
 
 		//transition from icons when an icon is clicked
 		$(".pick-type-icon").click(function(){
-			$step = $step + 1;
+			$step = 1
 			$('.post-type-desc').hide();//immediately hide the post type description from hover
 			$('#step0').slideUp('fast'); //slide the icon section up
-			//$(".share-button").text($step);//test step value
-
 		});
 
 					$('#article-icon').click(function(){
 						$type = 'article';
 						$('#add-article-form').fadeIn('slow'); // queue the form
-						$('#step1_article').fadeIn('fast');
 						$(".share-button").text("Article / Op-Ed").css({"text-transform": "capitalize"});//make the button on top reflect the post-type of the form
+
+						// bring in input fields, buttons
+						$('#step1_'+$type.toString()).fadeIn('fast');
+						$('#step2_'+$type.toString()).fadeIn('fast');
+						$('#step3_'+$type.toString()).fadeIn('fast');
+						$('#step4_'+$type.toString()).fadeIn('fast');
+						$('.next-inputs').show();
 					});
 
 					$('#essay-icon').click(function(){
 						$type = 'essay';
 						$('#add-essay-form').fadeIn('slow'); // queue the form
-						$('#step1_essay').fadeIn('fast');
 						$(".share-button").text("Essay / Longform");//make the button on top reflect the post-type of the form
+
+						// bring in input fields, buttons
+						$('#step1_'+$type.toString()).fadeIn('fast');
+						$('#step2_'+$type.toString()).fadeIn('fast');
+						$('#step3_'+$type.toString()).fadeIn('fast');
+						$('#step4_'+$type.toString()).fadeIn('fast');
+						$('.next-inputs').show();
 					});
 
 					$('#book-icon').click(function(){
 						$type = 'book';
 						$('#add-book-form').fadeIn('slow'); // queue the form
-						$('#step1_book').fadeIn('fast');
 						$(".share-button").text("Book").css({"text-transform": "capitalize"});//make the button on top reflect the post-type of the form
+
+						// bring in input fields, buttons
+						$('#step1_'+$type.toString()).fadeIn('fast');
+						$('#step2_'+$type.toString()).fadeIn('fast');
+						$('#step3_'+$type.toString()).fadeIn('fast');
+						$('#step4_'+$type.toString()).fadeIn('fast');
+						$('.next-inputs').show();
 					});
 
 					$('#study-icon').click(function(){
 						$type = 'study';
 						$('#add-study-form').fadeIn('slow'); // queue the form
-						$('#step1_study').fadeIn('fast');
 						$(".share-button").text("Study / Stats").css({"text-transform": "capitalize"});//make the button on top reflect the post-type of the form
+
+						// bring in input fields, buttons
+						$('#step1_'+$type.toString()).fadeIn('fast');
+						$('#step2_'+$type.toString()).fadeIn('fast');
+						$('#step3_'+$type.toString()).fadeIn('fast');
+						$('#step4_'+$type.toString()).fadeIn('fast');
+						$('.next-inputs').show();
 					});
 
 					$('#audio-icon').click(function(){
 						$type = 'audio';
 						$('#add-audio-form').fadeIn('slow'); // queue the form
-						$('#step1_audio').fadeIn('fast');
 						$(".share-button").text("Podcast / Audio").css({"text-transform": "capitalize"});//make the button on top reflect the post-type of the form
+
+						// bring in input fields, buttons
+						$('#step1_'+$type.toString()).fadeIn('fast');
+						$('#step2_'+$type.toString()).fadeIn('fast');
+						$('#step3_'+$type.toString()).fadeIn('fast');
+						$('#step4_'+$type.toString()).fadeIn('fast');
+						$('.next-inputs').show();
 					});
 
 					$('#speech-icon').click(function(){
 						$type = 'speech';
 						$('#add-speech-form').fadeIn('slow'); // queue the form
-						$('#step1_speech').fadeIn('fast');
 						$(".share-button").text("Speech / Debate").css({"text-transform": "capitalize"});//make the button on top reflect the post-type of the form
+
+						// bring in input fields, buttons
+						$('#step1_'+$type.toString()).fadeIn('fast');
+						$('#step2_'+$type.toString()).fadeIn('fast');
+						$('#step3_'+$type.toString()).fadeIn('fast');
+						$('#step4_'+$type.toString()).fadeIn('fast');
+						$('.next-inputs').show();
 					});
 
 					$('#video-icon').click(function(){
 						$type = 'video';
 						$('#add-video-form').fadeIn('slow'); // queue the form
-						$('#step1_video').fadeIn('fast');
 						$(".share-button").text("Film / Video").css({"text-transform": "capitalize"});//make the button on top reflect the post-type of the form
+
+						// bring in input fields, buttons
+						$('#step1_'+$type.toString()).fadeIn('fast');
+						$('#step2_'+$type.toString()).fadeIn('fast');
+						$('#step3_'+$type.toString()).fadeIn('fast');
+						$('#step4_'+$type.toString()).fadeIn('fast');
+						$('.next-inputs').show();
 					});
 
 					$('#media-icon').click(function(){
 						$type = 'media';
 						$('#add-media-form').fadeIn('slow'); // queue the form
-						$('#step1_media').fadeIn('fast');
 						$(".share-button").text("Everything Else").css({"text-transform": "capitalize"});//make the button on top reflect the post-type of the form
+
+						// bring in input fields, buttons
+						$('#step1_'+$type.toString()).fadeIn('fast');
+						$('#step2_'+$type.toString()).fadeIn('fast');
+						$('#step3_'+$type.toString()).fadeIn('fast');
+						$('#step4_'+$type.toString()).fadeIn('fast');
+						$('.next-inputs').show();
 					});
 
 
 
-			//=======================================
-			//
-			//Navigation
-			//
-			//=======================================
+		//=======================================
+		//
+		//Navigation
+		//
+		//=======================================
 
+				//////////////////////////////////////
+				// Navigation buttons on the inputs window
 
-					//previous button functionality
-					$('.prev-btn').click(function(){
+						$('.next-inputs').click(function(){
 
-						//navigate back to icon selection
-						if($step==1){
-							$('#step'+$step.toString()+"_"+$type.toString()).removeClass('prev-step-in'); //remove the class that allows swipe left
-							$('#add-'+$type+'-form').find("input[type=text], textarea").val(""); //reset form fields
-							$('.post-type-desc').show();//bring back the post description box
-							$('#step1_'+$type.toString()).fadeOut('fast'); //slide the icon section up
-							$('#step0').slideDown('fast');
-							$(".share-button").text("Nevermind");//chnage back share button
+									//hide initial steps
+									$('#step1_'+$type.toString()).hide();
+									$('#step2_'+$type.toString()).hide();
+									$('#step3_'+$type.toString()).hide();
+									$('#step4_'+$type.toString()).hide();
 
-							$step = $step-1;
-							$type = '';
-							//$(".share-button").text($step);//test step value
-						}
+									$step = 5; // step5 is the "preview" step
 
-						else{
+									//remove previous nav button
+									$('.next-inputs').hide(); //hide the next button
 
-							//back to normal "Go Back"
-							if($step==5){
-								$('.prev-btn').removeClass('prev-btn-submit');
-
-							};
-
-							$('#step'+$step.toString()+"_"+$type.toString()).removeClass('prev-step-in'); //remove the class that allows swipe left
-							$('#step'+$step.toString()+"_"+$type.toString()).animate({width: 'toggle', height:'100%'}, 150, "linear").fadeOut('fast'); //hide current form step, swipe left
-							$step = $step - 1;
-
-							if($step==4){
-								$('.next-btn').show(); //show the next button again
-							};
-
-
-							$('#step'+$step.toString()+"_"+$type.toString()).addClass('prev-step-in').delay(200).animate({width: 'toggle', height:'100%'}, 150, "linear"); //bring in previous step
-							//$(".share-button").text($step);//test step value
-						}
-					});
-
-					$('.next-btn').click(function(){
-
-						if(formCheck($step)==true){
-
-								$('#step'+$step.toString()+"_"+$type.toString()).removeClass('prev-step-in'); //remove the class that allows swipe left
-								$('#step'+$step.toString()+"_"+$type.toString()).animate({width: 'toggle', height:'100%'}, 150, "linear").fadeOut('fast'); //hide current form step, swipe right
-
-								$step = $step + 1;
-
-
-								//if hit next button to the preview/submit step
-								if($step==5){
-									$('.next-btn').hide(); //hide the next button
-									$('.prev-btn').addClass('prev-btn-submit');
-									$('.post-type-desc').show();
 
 												//Link Preview
 												var previewLink = $('#step1_'+$type.toString()).find("input").val();
@@ -306,13 +303,57 @@
 												var previewSource = $('#step4_'+$type.toString()).find("input").val();
 												$("#preview-"+$type.toString()+"-source").text(previewSource.toString());
 
-								};
-
-								$('#step'+$step.toString()+"_"+$type.toString()).addClass('prev-step-in').delay(200).animate({width: 'toggle', height:'100%'}, 150, "linear"); //bring in next step
+								$('#step'+$step.toString()+"_"+$type.toString()).addClass('prev-step-in').delay(200).fadeIn('fast'); //bring in next step
 								//$(".share-button").text($step);//test step value
-							};
+						});
 
-					});
+
+
+				/////////////////////////////////////////
+				// Navigation buttons on the preview window
+
+						//"Go Back" button on preview step
+						$('.prev-preview').click(function(){
+
+							$('#step5_'+$type.toString()).hide(); // hide the 'preview' step
+
+							$step = 1 // step back to 1 (includes steps 1-4)
+
+							// bring back input fields
+							$('#step1_'+$type.toString()).fadeIn('fast');
+							$('#step2_'+$type.toString()).fadeIn('fast');
+							$('#step3_'+$type.toString()).fadeIn('fast');
+							$('#step4_'+$type.toString()).fadeIn('fast');
+
+
+							//reset stuff
+							$('.next-inputs').show(); //show the next button
+							$('.post-type-desc').hide();
+
+						});
+
+						// next button to progress to content and submission
+						$('.next-preview').click(function(){
+							$('#step5_'+$type.toString()).hide(); // hide preview window
+
+							$step = 6; // progress to content window
+							$('#step'+$step.toString()+"_"+$type.toString()).fadeIn('fast'); //bring in content window
+						});
+
+				/////////////////////////////////////////
+				// Navigation buttons on the submit window
+
+						//Go Back on submit step
+						$('.prev-submit').click(function(){
+							$('#step6_'+$type.toString()).hide(); // hide submit window
+
+							$step = 5 //step back to preview (step5)
+
+							//bring back preview window
+							$('#step5_'+$type.toString()).fadeIn('fast'); // show preview window
+
+						});
+
 
 
 					//=======================================
@@ -446,7 +487,6 @@
 
 //================================================
 // Dropdown on topic and playlist descriptions
-
 
 	$('#dropdown').click(function(){
 			$('.subcat-desc').slideToggle('fast');

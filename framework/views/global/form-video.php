@@ -9,49 +9,44 @@
 
       <form id="add-video-form" name="add-media-form" method="post" action="">
 
-                <!-- Link -->
-                <div id="step1_video">
-                    <label for="source-link">Paste the URL here</label>
-                    <p class="form-help">It has to start with "http"</p>
-                        <input autocomplete="off" type="text" id="source-link" value="" size="20" name="source_link" />
+                      <!-- Link -->
+                      <div id="step1_video">
 
-                      <?php x_get_view( 'global', 'form-nav' ); ?>
-                </div>
+                          <input placeholder="URL" autocomplete="off" type="text" id="source-link" value="" name="source_link" />
+                      </div>
 
-                <!-- Title -->
-                <div id="step2_video">
-                        <label for="title">What's the title?</label>
-                        <input type="text" id="title" value="" size="20" name="title" />
+                      <!-- Title -->
+                      <div id="step2_video">
 
-                      <?php x_get_view( 'global', 'form-nav' ); ?>
-                </div>
+                          <input placeholder="Title" type="text" id="title" value="" name="title" />
+                      </div>
 
-                <!-- Author/Creator -->
-                <div id="step3_video">
-                        <label for="article-author">Who created it?</label>
-                        <p class="form-help">This can be a gray area, so just do your best.</p>
-                        <input type="text" id="article-author" value="" size="20" name="article_author" />
+                      <!-- Author/Creator -->
+                      <div id="step3_video">
 
-                      <?php x_get_view( 'global', 'form-nav' ); ?>
-                </div>
+                          <input placeholder="Creator" type="text" id="video-author" value="" name="video_author" />
+                      </div>
 
-                <!-- Source -->
-                <div id="step4_video">
-                        <label for="source">What's the source?</label>
-                        <p class="form-help">Only input "YouTube" if you can't find specifics.</p>
-                        <input type="text" id="source" value="" size="20" name="source" />
+                      <!-- Source -->
+                      <div id="step4_video">
 
-                        <?php x_get_view( 'global', 'form-nav' ); ?>
-                </div>
+                          <input placeholder="Source / Network / Studio" type="text" id="source" value="" size="20" name="source" />
+                      </div>
+
+                      <!-- Next Button to Preview -->
+                      <div class="next-inputs">Preview your post</div>
 
 
                 <!-- Preview & Submit -->
                 <div id="step5_video">
 
-                  <label>Look good? Link work?</label>
-                  <p class="form-help">By the way, adding this means you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p><br>
+                  <label id="preview-label">Look good? Link work?</label>
+                  <p class="form-terms">By the way, adding this means you agree to our <a target="_blank" href="<?php echo get_permalink( get_page_by_path( 'terms-of-use' ) ) ?>">Terms of Use</a>.</p><br>
+
                   <!--  Preview the Post    -->
                       <div class="loop-cont">
+
+                            <!-- Preview Title -->
                             <div class="loop-title">
                               <span id="preview-video-title"></span>
                             </div>
@@ -77,25 +72,30 @@
                       </div>
                       <!-- End of post preview -->
 
-                      <div class="form-nav-butts">
-                          <button type="submit" value="Add it" id="submit" name="submit">Add it</button>
-                          <div class="prev-btn">Go Back</div>
-                      </div>
+                      <!-- Next Button to Content/why make the post -->
+                      <div  class="next-preview">Tell us why're you posting it</div>
+                      <div class="prev-preview">Go Back</div>
 
                 </div>
 
+                <!-- Content and submission -->
+                <div id="step6_video">
+                      <textarea rows="7" placeholder="Why are you posting this?" type="textarea" id="description" value="" name="post_content"></textarea>
+
+                          <button type="submit" value="Add it" id="submit" name="submit">Post</button>
+                          <div class="prev-submit">Go Back</div>
+                </div>
+
+
                 <!--Pick the post type for PHP submission -->
                 <input type="hidden" name="post-type" id="post-type" value="video" />
-                  <input type="hidden" name="action" value="video" />
+                <input type="hidden" name="action" value="video" />
 
                 <!-- Archive the post under current page's category for PHP submission -->
                 <input type="hidden" name="cat" id="cat" value="<?php echo $the_cat_id ?>" />
-                  <input type="hidden" name="action" value="<?php echo $the_cat_id ?>" />
+                <input type="hidden" name="action" value="<?php echo $the_cat_id ?>" />
 
                 <?php wp_nonce_field( 'name_of_my_action','name_of_nonce_field' ); ?>
-
-
-
       </form>
 
                   <?php

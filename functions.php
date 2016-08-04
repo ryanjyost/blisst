@@ -173,7 +173,7 @@ function disqus_embed($disqus_shortname) {
 
 /*
 *
-*  Front End Posting (thanks Morne Zeelie, http://teachingyou.net/wordpress/wordpress-post-from-the-front-end-with-a-custom-post-type/)
+*  Front End Posting (thanks for the help Morne Zeelie, http://teachingyou.net/wordpress/wordpress-post-from-the-front-end-with-a-custom-post-type/)
 *
 */
 
@@ -199,12 +199,13 @@ function save_post_data() {
             $the_cat_id = $cat->term_id;
 
             //get playlist id for the tax_input array
-              $tax = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+            $tax = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 
             //get custom fields from form to pass into meta_input
             $source_link = $_POST['source_link'];
             $article_author = $_POST['article_author']; // "article_author" merely to differentiate from "author"
             $source = $_POST['source'];
+            $description = $_POST['post_content'];
 
             // Add the content of the form to $post as an array
             $post = array(

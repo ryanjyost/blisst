@@ -84,7 +84,29 @@ html{
        url('http://fonts.gstatic.com/l/font?kit=IP_NSg73bUZGuyb3zF6qcQ&skey=30a27f2564731c64&v=v10#Raleway') format('svg');
 }
 
+::-webkit-input-placeholder {
+   color: #BDBDBD !important;
 
+   font-weight:400;
+}
+
+:-moz-placeholder {
+  color: #BDBDBD !important;
+   font-style:italic !important;
+   font-weight:300;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #BDBDBD !important;
+   font-style:italic !important;
+   font-weight:300;
+}
+
+:-ms-input-placeholder {
+   color: #BDBDBD !important;
+   font-style:italic !important;
+   font-weight:300;
+}
 
 
 
@@ -1062,14 +1084,11 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 					#study-icon{
 						margin-left:.5%;
 					}
-.submit-form{
-	display:none;
-	color:#000000;
-}
+
 
 .form-window{
 		display:none;
-		height:325px;
+		height:60vh;
 		padding:20px 20px 0px 20px;
 		position:relative;
 		margin:0px 10px 0px 10px;
@@ -1082,19 +1101,47 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 			font-size:16px;
 			margin:auto;
 			display:block;
-			margin-top:20px;
-			margin-bottom:20px;
-			text-align:center;
+			margin-top:3px;
+			margin-bottom:4vh;
+			text-align:left;
+			letter-spacing:.05em;
+			color:#585858;
 		}
 
 		.form-window label{
-			font-size:20px;
-			display:block;
-			width:70%;
 			margin:auto;
+			font-size:24px;
+			display:block;
+			width:80%;
+			margin-top:5vh;
+			margin-bottom:5vh;
+			letter-spacing:.05em;
 			text-align:center;
-			padding:0px 0px 10px 0px;
 		}
+
+		.form-window textarea{
+			margin:auto;
+			font-size:15px;
+			display:block;
+			width:80%;
+			margin-top:5vh;
+			letter-spacing:.05em;
+
+		}
+
+			#preview-label{
+				text-align:center;
+				font-size:20px;
+				margin-top:5vh;
+				margin-bottom:0px !important;
+			}
+
+			p.form-terms {
+				font-size:12px;
+				text-align:center;
+				font-weight:300;
+				margin-bottom:5vh;
+				}
 
 		.form-window button{
 			display:block;
@@ -1112,19 +1159,15 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 
 		}
 
+				.submit-form{
+					display:none;
+					color:#585858;
+				}
+
 		.form-nav-butts{
 			display:block;
-			width:40%;
+			width:80%;
 			margin:auto;
-		}
-
-		.form-help{
-			text-align:center;
-			margin:auto;
-			font-weight:200;
-			margin:0px 0px 0px 0px;
-			display:block;
-			font-size:.8vw;
 		}
 
 			.input-invalid{
@@ -1132,35 +1175,85 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 			}
 
 		.prev-btn{
-			float:left;
-			width:15%;
-			cursor:default;
-
-		}
-
-		.prev-btn-submit{
 			display:block;
 			float:none;
-			cursor:default;
 			font-size:16px;
 			text-align:center;
 			margin:auto;
 			width:40%;
 			font-weight:300;
 			padding-top:10px;
+			cursor:pointer;
 
 		}
 
-		.next-btn{
-			float:right;
-			width:15%;
-			cursor:default;
+		.prev-btn-submit{
+			display:block;
+			float:none;
+			font-size:16px;
+			text-align:center;
+			margin:auto;
+			width:40%;
+			font-weight:300;
+			padding-top:10px;
+			cursor:pointer;
 
+		}
+
+		.next-inputs{
+			width:60%;
+			cursor:pointer;
+			margin:auto;
+			margin-top:5vh;
+			text-align:center;
+			background-color:#585858;
+			padding:8px 25px 8px 25px !important;
+			font-size:20px !important;
+			color:#ffffff;
+			border-radius:3px!important;
+			font-weight:200 !important;
+		}
+
+		.next-preview{
+			width:60%;
+			cursor:pointer;
+			margin:auto;
+			margin-top:5vh;
+			text-align:center;
+			background-color:#585858;
+			padding:8px 25px 8px 25px !important;
+			font-size:20px !important;
+			color:#ffffff;
+			border-radius:3px!important;
+			font-weight:200 !important;
+		}
+
+		.prev-preview{
+			display:block;
+			float:none;
+			font-size:16px;
+			text-align:center;
+			margin:auto;
+			width:40%;
+			font-weight:300;
+			padding-top:10px;
+			cursor:pointer;
+		}
+
+		.prev-submit{
+			display:block;
+			float:none;
+			font-size:16px;
+			text-align:center;
+			margin:auto;
+			width:40%;
+			font-weight:300;
+			padding-top:10px;
+			cursor:pointer;
 		}
 
 		#submit button:active{
 			border:none !important;
-
 		}
 
 
@@ -1205,6 +1298,8 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 	#step3_article{display:none;}
 	#step4_article{display:none;}
 	#step5_article{display:none;}
+	#step6_article{display:none;}
+
 
 /*Essay*/
 #add-essay-form{display:none;}
@@ -1213,6 +1308,7 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 	#step3_essay{display:none;}
 	#step4_essay{display:none;}
 	#step5_essay{display:none;}
+	#step6_essay{display:none;}
 
 /*Book*/
 #add-book-form{display:none;}
@@ -1221,6 +1317,7 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 	#step3_book{display:none;}
 	#step4_book{display:none;}
 	#step5_book{display:none;}
+	#step6_book{display:none;}
 
 /*Study*/
 #add-study-form{display:none;}
@@ -1229,6 +1326,7 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 	#step3_study{display:none;}
 	#step4_study{display:none;}
 	#step5_study{display:none;}
+	#step6_study{display:none;}
 
 /*Audio*/
 #add-audio-form{display:none;}
@@ -1237,6 +1335,7 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 	#step3_audio{display:none;}
 	#step4_audio{display:none;}
 	#step5_audio{display:none;}
+	#step6_audio{display:none;}
 
 /*Speech*/
 #add-speech-form{display:none;}
@@ -1245,6 +1344,8 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 	#step3_speech{display:none;}
 	#step4_speech{display:none;}
 	#step5_speech{display:none;}
+	#step5_speech{display:none;}
+	#step6_speech{display:none;}
 
 /*Video*/
 #add-video-form{display:none;}
@@ -1253,6 +1354,7 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 	#step3_video{display:none;}
 	#step4_video{display:none;}
 	#step5_video{display:none;}
+	#step6_video{display:none;}
 
 /*Media*/
 #add-media-form{display:none;}
@@ -1261,6 +1363,7 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 	#step3_media{display:none;}
 	#step4_media{display:none;}
 	#step5_media{display:none;}
+	#step6_media{display:none;}
 
 	.pick-type{
 		width:100%;
@@ -1288,7 +1391,7 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 	}
 
 	.post-type-desc h4{
-		font-weight:500;
+		font-weight:300;
 
 	}
 

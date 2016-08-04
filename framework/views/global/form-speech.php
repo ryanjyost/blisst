@@ -9,49 +9,44 @@
 
       <form id="add-speech-form" name="add-media-form" method="post" action="">
 
-                <!-- Link -->
-                <div id="step1_speech">
-                    <label for="source-link">Paste the URL here</label>
-                    <p class="form-help">Could be a link to a transcript or video.</p>
-                        <input autocomplete="off" type="text" id="source-link" value="" size="20" name="source_link" />
+                      <!-- Link -->
+                      <div id="step1_speech">
 
-                      <?php x_get_view( 'global', 'form-nav' ); ?>
-                </div>
+                          <input placeholder="URL" autocomplete="off" type="text" id="source-link" value="" name="source_link" />
+                      </div>
 
-                <!-- Title -->
-                <div id="step2_speech">
-                        <label for="title">What's the title?</label>
-                        <p class="form-help">If no title, give a brief descriptor, por favor.</p>
-                        <input type="text" id="title" value="" size="20" name="title" />
+                      <!-- Title -->
+                      <div id="step2_speech">
 
-                      <?php x_get_view( 'global', 'form-nav' ); ?>
-                </div>
+                          <input placeholder="Title" type="text" id="title" value="" name="title" />
+                      </div>
 
-                <!-- Author/Creator -->
-                <div id="step3_speech">
-                        <label for="article-author">Who's the featured speaker(s)?</label>
-                        <input type="text" id="article-author" value="" size="20" name="article_author" />
+                      <!-- Author/Creator -->
+                      <div id="step3_speech">
 
-                      <?php x_get_view( 'global', 'form-nav' ); ?>
-                </div>
+                          <input placeholder="Speaker(s)" type="text" id="speech-author" value="" name="speech_author" />
+                      </div>
 
-                <!-- Source -->
-                <div id="step4_speech">
-                        <label for="source">Who hosted it / Where did it take place?</label>
-                        <p class="form-help">Just use your best judgement for what the "source" is.</p>
-                        <input type="text" id="source" value="" size="20" name="source" />
+                      <!-- Source -->
+                      <div id="step4_speech">
 
-                        <?php x_get_view( 'global', 'form-nav' ); ?>
-                </div>
+                          <input placeholder="Event / Location" type="text" id="source" value="" size="20" name="source" />
+                      </div>
+
+                      <!-- Next Button to Preview -->
+                      <div class="next-inputs">Preview your post</div>
 
 
                 <!-- Preview & Submit -->
                 <div id="step5_speech">
 
-                  <label>Look good? Link work?</label>
-                  <p class="form-help">By the way, adding this means you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p><br>
+                  <label id="preview-label">Look good? Link work?</label>
+                  <p class="form-terms">By the way, adding this means you agree to our <a target="_blank" href="<?php echo get_permalink( get_page_by_path( 'terms-of-use' ) ) ?>">Terms of Use</a>.</p><br>
+
                   <!--  Preview the Post    -->
                       <div class="loop-cont">
+
+                            <!-- Preview Title -->
                             <div class="loop-title">
                               <span id="preview-speech-title"></span>
                             </div>
@@ -77,25 +72,30 @@
                       </div>
                       <!-- End of post preview -->
 
-                      <div class="form-nav-butts">
-                          <button type="submit" value="Add it" id="submit" name="submit">Add it</button>
-                          <div class="prev-btn">Go Back</div>
-                      </div>
+                      <!-- Next Button to Content/why make the post -->
+                      <div  class="next-preview">Tell us why're you posting it</div>
+                      <div class="prev-preview">Go Back</div>
 
                 </div>
 
+                <!-- Content and submission -->
+                <div id="step6_speech">
+                      <textarea rows="7" placeholder="Why are you posting this?" type="textarea" id="description" value="" name="post_content"></textarea>
+
+                          <button type="submit" value="Add it" id="submit" name="submit">Post</button>
+                          <div class="prev-submit">Go Back</div>
+                </div>
+
+
                 <!--Pick the post type for PHP submission -->
                 <input type="hidden" name="post-type" id="post-type" value="speech" />
-                  <input type="hidden" name="action" value="speech" />
+                <input type="hidden" name="action" value="speech" />
 
                 <!-- Archive the post under current page's category for PHP submission -->
                 <input type="hidden" name="cat" id="cat" value="<?php echo $the_cat_id ?>" />
-                  <input type="hidden" name="action" value="<?php echo $the_cat_id ?>" />
+                <input type="hidden" name="action" value="<?php echo $the_cat_id ?>" />
 
                 <?php wp_nonce_field( 'name_of_my_action','name_of_nonce_field' ); ?>
-
-
-
       </form>
 
                   <?php
