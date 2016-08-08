@@ -33,7 +33,6 @@
 
 
             <?php if(is_user_logged_in()): ?>
-                <div id="add-list-btn" class="add-btn">Make a List</div>
                      <!-- Dropdown to add list -->
                     <div id="add-list">
                         <?php echo do_shortcode('[front-end-cat]'); ?>

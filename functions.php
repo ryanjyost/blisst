@@ -178,14 +178,11 @@ function disqus_embed($disqus_shortname) {
 */
 
 function save_post_data() {
-
         if ( empty($_POST) || !wp_verify_nonce($_POST['name_of_nonce_field'],'name_of_my_action') )
         {
         print 'Sorry, your nonce did not verify.';
         exit;
-
         }else{
-
             // Do some minor form validation to make sure there is content
             if (isset ($_POST['title'])) {
             $title =  $_POST['title'];
@@ -193,40 +190,39 @@ function save_post_data() {
             echo 'Please enter a title';
             exit;
             }
-
             //get category id for the post_category array
             $cat = get_category( get_query_var( 'cat' ) );
             $the_cat_id = $cat->term_id;
-
             //get playlist id for the tax_input array
             $tax = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-
             //get custom fields from form to pass into meta_input
             $source_link = $_POST['source_link'];
             $article_author = $_POST['article_author']; // "article_author" merely to differentiate from "author"
             $source = $_POST['source'];
             $description = $_POST['post_content'];
-
+            $the_cat_id = $_POST['cat'];
             // Add the content of the form to $post as an array
             $post = array(
                 'post_title' => wp_strip_all_tags( $title ),
                 'post_content' => $description,
-                'post_category' => array($the_cat_id),
+                'post_category' => array($_POST['cat']),
                 'tags_input' => $tags,
                 'post_status' => 'publish',
                 'post_type' => $_POST['post-type'],
                 'meta_input' => array('source_link' => $source_link, 'article_author' => $article_author, 'source' => $source),
                 'tax_input' => array($tax_slug)
             );
-
         $post_id = wp_insert_post($post);  // http://codex.wordpress.org/Function_Reference/wp_insert_post
         wp_set_object_terms($post_id, $tax->slug, 'playlist' );
 
-        $location = the_permalink();// redirect to current page
+        if(is_home()){
+            $location = esc_url( home_url( '/' ) );// redirect to home page
+        } else {
+            $location = the_permalink();// redirect to current page
+        };
 
         echo "<meta http-equiv='refresh' content='0;url=$location' />"; exit;
         } // end IF
-
 }
 
 

@@ -477,6 +477,40 @@
 
 		});
 
+//===============================================================================================================================================
+//
+//Loop Stuff
+//
+//===============================================================================================================================================
+
+	// switch between post type icon and expand icon on hover
+	$('.loop-cont').hover(function(){
+		$(this).find('img').toggle();
+	});
+
+	$('.loop-cont').find('img').click(function(){
+		$(this).parent().parent().find(".post-comment-box").slideToggle('fast');
+	})
+
+	$('.plus-icon').hover(function(){
+		$(this).toggleClass('plus-icon-hover')
+	});
+
+
+	//expand all comments
+	$('#expand-all').click(function(){
+		$(".post-comment-box").slideToggle();
+		$(this).toggleText('Expand all','Collapse all')
+	});
+
+
+	//================================================
+	// When post comment box is expanded
+
+		$('.plus-icon').click(function(){
+				$(this).toggleClass('collapse-plus');
+		});
+
 
 
 //===============================================================================================================================================
@@ -500,11 +534,6 @@
 		$(this).toggleText("+", "-").toggleClass('collapse-add-btn');
 	});
 
-// Dropdown form to add list
-	$('#add-list-btn').click(function(){
-		$('#add-list').slideToggle('fast');
-		$(this).toggleText("Make a List", "-").toggleClass('collapse-list-btn');
-	});
 
 
 

@@ -84,6 +84,9 @@
 
 
     <div class="category-middle-loop">
+
+      <?php x_get_view( 'global', 'loop-filter' ); ?>
+
        <?php
               //get playlist information for later
                   $args = array( 'post_type' => array('article', 'essay', 'book', 'audio', 'video', 'study', 'speech', 'media'), 'posts_per_page' => -1,  'orderby' => 'date', 'order' => 'DESC', 'taxonomy' => 'playlist');

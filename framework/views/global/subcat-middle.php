@@ -85,6 +85,8 @@
 
     <div class="category-middle-loop">
 
+      <?php x_get_view( 'global', 'loop-filter' ); ?>
+
        <?php
               //get category information for later
               $cat = get_category( get_query_var( 'cat' ) );

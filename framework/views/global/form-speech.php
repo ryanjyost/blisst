@@ -9,9 +9,23 @@
 
       <form id="add-speech-form" name="add-media-form" method="post" action="">
 
-                      <!-- Link -->
+                      <!-- Topic Dropdown & Link -->
                       <div id="step1_speech">
+                          <?php
+                                //get category id if on category/topic page
+                                $cat = get_category( get_query_var( 'cat' ) );
+                                $cat_id = $cat->term_id;
+                                    if($cat_id>0){
+                                      $the_cat_id = $cat_id;
+                            ?>
+                                  <!-- Archive the post under current page's category for PHP submission -->
+                                  <input type="hidden" name="cat" id="cat" value="<?php echo $the_cat_id ?>" />
+                                  <input type="hidden" name="action" value="<?php echo $the_cat_id ?>" />
 
+                            <?php } else{
+                                      wp_dropdown_categories( 'selected=112&echo=1&hide_empty=0&hierarchical=1&orderby=name&order=ASC&show_option_none=Pick a topic&taxonomy=category');
+                                    }
+                            ?>
                           <input placeholder="URL" autocomplete="off" type="text" id="source-link" value="" name="source_link" />
                       </div>
 
@@ -44,7 +58,7 @@
                   <p class="form-terms">By the way, adding this means you agree to our <a target="_blank" href="<?php echo get_permalink( get_page_by_path( 'terms-of-use' ) ) ?>">Terms of Use</a>.</p><br>
 
                   <!--  Preview the Post    -->
-                      <div class="loop-cont">
+                      <div class="loop-cont-preview">
 
                             <!-- Preview Title -->
                             <div class="loop-title">
@@ -90,10 +104,6 @@
                 <!--Pick the post type for PHP submission -->
                 <input type="hidden" name="post-type" id="post-type" value="speech" />
                 <input type="hidden" name="action" value="speech" />
-
-                <!-- Archive the post under current page's category for PHP submission -->
-                <input type="hidden" name="cat" id="cat" value="<?php echo $the_cat_id ?>" />
-                <input type="hidden" name="action" value="<?php echo $the_cat_id ?>" />
 
                 <?php wp_nonce_field( 'name_of_my_action','name_of_nonce_field' ); ?>
       </form>

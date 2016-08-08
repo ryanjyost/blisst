@@ -35,7 +35,6 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -277,26 +276,54 @@ footer{
  Loop
 
  ----------------------------------------------------------------------------------*/
-.loop-cont{
+.post-cont{
  	padding:15px 5px 15px 5px;
  	margin:0px 0px 0px 0px;
  	border-bottom:1px solid #f2f2f2;
  	position:relative;
  	width:100%;
-
  }
 
  .category-top{
 
  }
 
- div.loop-cont:hover{
+ div.post-cont:hover{
  	background-color:#FAFEFF;
  }
 
- .loop-cont a:hover{
+ .post-cont a:hover{
  	text-decoration:underline;
  }
+
+ .loop-cont-preview{
+ 	padding:15px 5px 15px 5px;
+ 	margin:0px 0px 0px 0px;
+ 	border-bottom:1px solid #f2f2f2;
+ 	position:relative;
+ 	width:100%;
+ }
+
+  div.loop-cont-preview:hover{
+ 	background-color:#FAFEFF;
+ }
+
+.loop-filter{
+	border-bottom:1px solid #f2f2f2;
+	margin-bottom: 2vh;
+}
+
+.loop-filter p{
+	font-size: 12px;
+	display: inline;
+	color: #a4a4a4;
+}
+
+.loop-filter p:hover{
+	font-size: 12px;
+	font-weight: 500;
+	cursor: default;
+}
 
 
  .loop-title {
@@ -338,49 +365,102 @@ footer{
 
 
 .loop-author{
-font-size:12px;
-line-height:15px;
-padding:0px 0px 0px 0px !important;
-margin: 0px 0px 0px 0px !important;
-color:#A4A4A4;
-display:inline;
+	font-size:12px;
+	line-height:15px;
+	padding:0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px !important;
+	color:#A4A4A4;
+	display:inline;
 }
 
 .loop-author a{
-font-size:12px;
-line-height:15px;
-padding:0px 0px 0px 0px !important;
-margin: 0px 0px 0px 0px !important;
-color:#A4A4A4;
-display:inline;
+	font-size:12px;
+	line-height:15px;
+	padding:0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px !important;
+	color:#A4A4A4;
+	display:inline;
 }
 
 .loop-author a:hover{
-font-size:12px;
-line-height:15px;
-padding:0px 0px 0px 0px !important;
-margin: 0px 0px 0px 0px !important;
-color:#A4A4A4;
-display:inline;
-text-decoration:underline;
+	font-size:12px;
+	line-height:15px;
+	padding:0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px !important;
+	color:#A4A4A4;
+	display:inline;
+	text-decoration:underline;
 }
 
 .loop-source{
-font-size:12px;
-line-height:15px;
-padding:0px 0px 0px 5px !important;
-margin: 0px 0px 0px 0px !important;
-color:#A4A4A4;
-display:inline;
-font-style:italic;
+	font-size:12px;
+	line-height:15px;
+	padding:0px 0px 0px 5px !important;
+	margin: 0px 0px 0px 0px !important;
+	color:#A4A4A4;
+	display:inline;
+	font-style:italic;
 }
 
-.bookmark-icon{
-text-align:right;
-display:block;
-float:right;
-max-width:10%;
+.post-icon{
+	text-align:right;
+	display:block;
+	float:right;
+	max-width:10%;
+}
 
+.plus-icon{
+	text-align:right;
+	display:none;
+	float:right;
+	max-width:10%;
+	transform: rotate(0deg);
+  -ms-transform: rotate(0deg); /* IE 9 */
+  -moz-transform: rotate(0deg); /* Firefox */
+  -webkit-transform: rotate(0deg); /* Safari and Chrome */
+  -o-transform: rotate(0deg); /* Opera */
+  transition:transform .2s ease-in-out;
+  -moz-transition: transform .2s ease-in-out; /* Firefox */
+  -webkit-transition: transform .2s ease-in-out; /* Safari and Chrome */
+}
+
+.collapse-plus{
+	transform: rotate(45deg);
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -moz-transform: rotate(45deg); /* Firefox */
+  -webkit-transform: rotate(45deg); /* Safari and Chrome */
+  -o-transform: rotate(45deg); /* Opera */
+  transition:transform .2s ease-in-out;
+  -moz-transition: transform .2s ease-in-out; /* Firefox */
+  -webkit-transition: transform .2s ease-in-out; /* Safari and Chrome */
+
+}
+
+.plus-icon-hover{
+	text-align:right;
+	display:none;
+	float:right;
+	max-width:10%;
+	border:1px solid #ffffff;
+
+
+}
+
+.post-comment-box{
+	padding:8px 5px 8px 5px;
+	background-color:#ffffff;
+	font-size:14px;
+	line-height:18px;
+	font-weight:300;
+	letter-spacing:.04em;
+	display:none;
+
+}
+
+.post-comment-box p{
+	font-size:12px;
+	color:#BDBDBD;
+	text-align:right;
 
 }
 
@@ -503,16 +583,23 @@ Add Topics/playlists front-end
  ----------------------------------------------------------------------------------*/
 
 .add-btn {
-	font-size:2vw;
-	border:1px solid #7BDDF9 ;
-	padding:0px .8vw 0px .8vw;
+	font-size:3vw;
+	padding:0px .7vw 0px .8vw;
 	border-radius:30px;
 	margin:0px 5% 0px 0px !important;
 	color:#7BDDF9 !important;
 	float:right;
 	width:10%;
 	display:inline-block;
+	line-height: 3vw ;
 }
+
+.add-btn:hover{
+	font-weight:600;
+	text-decoration:none !important;
+	color:#2ECCFA !important;
+	cursor:default;
+	}
 
 .collapse-add-btn{
 	border:none !important;
@@ -530,18 +617,13 @@ Add Topics/playlists front-end
 }
 
 
-					.add-btn:hover{
-						font-weight:600;
-						text-decoration:none !important;
-						color:#2ECCFA !important;
-						border:1px solid #2ECCFA;
-						cursor:default;
-						}
+
 
 
 div #add-topic{
-	padding:10px 1% 25px 1%;
+	padding:1vh 1% 1vh 1%;
 	display:none;
+	margin-top: 5vh;
 
 }
 
@@ -552,7 +634,7 @@ div #add-topic{
 		 	height:3em;
 		 	display:block;
 		 	border-radius:5px;
-		 	margin-bottom:8px !important;
+		 	margin-bottom:2vh !important;
 		 }
 
 		 #subcat-dropdown{
@@ -577,8 +659,8 @@ div #add-topic{
 		 }
 
 div #add-list{
-	display:none;
-	padding:20px 1% 25px 1%;
+	display:block;
+	padding:.5vw 1% .5vw 1%;
 	background-color:#ffffff;
 
 }
@@ -617,19 +699,19 @@ div #add-list{
 		 }
 
 		  #submit-list-btn{
-		 	font-size:1em;
-		 	padding:0px 0px 0px 0px;
-		 	margin:0px 0px 0px 2.5%;
-		 	line-height:1.75em;
-		 	display:block;
-		 	width:60%;
-		 	border-radius:5px;
-		 	border:1px solid #585858;
-		 	background-color:#585858;
-		 	text-shadow:none !important;
-		 	font-weight:300;
-		 	margin-bottom:5vh;
-		 	float:left;
+		 	width:90%;
+	 		border-radius:14px;
+	 		margin:auto;
+	 		border:1px solid #585858;
+	 		text-align:center;
+	 		color:#ffffff !important;
+	 		background-color:#585858;
+	 		padding:5px 10px 5px 10px;
+	 		font-weight:600;
+	 		margin-bottom:5vh !important;
+	 		clear:both;
+	 		display:block;
+	 		font-size:14px;
 		 }
 
 		 #login-to-add{
@@ -753,12 +835,12 @@ padding:30px 0px 30px 0px;
  	margin:0px 0% 0px 0px;
  	float:left;
  	width:15%;
- 	padding:0px 0px 0px 0px;
  	background-color:#f9f9f9;
 	border-right:0px solid #f9f9f9;
 	height:98vh;
-	overflow:scroll;
+	overflow-x:hidden;
 	display:inline-block;
+
  }
 
 
@@ -850,7 +932,6 @@ padding:30px 0px 30px 0px;
 			 		font-weight:400;
 					letter-spacing:.5px;
 					font-size:1vw;
-					overflow:scroll;
 			 	}
 
 		 		.side-butts a:hover {
@@ -1088,7 +1169,7 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 
 .form-window{
 		display:none;
-		height:60vh;
+		height:70vh;
 		padding:20px 20px 0px 20px;
 		position:relative;
 		margin:0px 10px 0px 10px;
@@ -1101,7 +1182,7 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 			font-size:16px;
 			margin:auto;
 			display:block;
-			margin-top:3px;
+			margin-top:1px;
 			margin-bottom:4vh;
 			text-align:left;
 			letter-spacing:.05em;
@@ -1127,6 +1208,14 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 			margin-top:5vh;
 			letter-spacing:.05em;
 
+		}
+
+		.postform{
+			width:80%;
+			margin:auto;
+			display:block;
+			margin-bottom:4vh;
+			font-size:16px;
 		}
 
 			#preview-label{
@@ -1416,6 +1505,18 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 	}
 
 
+/*----------------------------------------------------------------------------------
+
+Userpro login
+
+ ----------------------------------------------------------------------------------*/
+
+ div.userpro-label label{
+ 	margin-top:1vh;
+ 	margin-bottom:1vh;
+
+ }
+
 
 
 
@@ -1474,7 +1575,8 @@ Page Area (if no middle/right column), e.g. home, about, etc.
  	float:left;
  	margin:0px 0px 0px 0px;
  	background-color:#ffffff;
- 	overflow:scroll;
+ 	overflow-y:scroll;
+ 	overflow-x: hidden;
  	height:98.2vh;
  	border-bottom:none !important;
  }
@@ -1488,7 +1590,8 @@ Page Area (if no middle/right column), e.g. home, about, etc.
  	background-color:#ffffff;
  	float:right;
  	height:98vh;
- 	overflow:scroll;
+ 	overflow-y:scroll;
+ 	overflow-x: hidden;
  	border-left: 4px solid #f9f9f9;
 
 
