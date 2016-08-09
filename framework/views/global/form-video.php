@@ -38,7 +38,7 @@
                       <!-- Author/Creator -->
                       <div id="step3_video">
 
-                          <input placeholder="Creator" type="text" id="video-author" value="" name="video_author" />
+                          <input placeholder="Creator" type="text" id="article-author" value="" name="article_author" />
                       </div>
 
                       <!-- Source -->

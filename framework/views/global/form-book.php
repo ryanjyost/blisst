@@ -38,7 +38,7 @@
                       <!-- Author/Creator -->
                       <div id="step3_book">
 
-                          <input placeholder="Author" type="text" id="book-author" value="" name="book_author" />
+                          <input placeholder="Author" type="text" id="article-author" value="" name="article_author" />
                       </div>
 
                       <!-- Source -->

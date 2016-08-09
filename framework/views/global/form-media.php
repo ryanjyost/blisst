@@ -38,7 +38,7 @@
                       <!-- Author/Creator -->
                       <div id="step3_media">
 
-                          <input placeholder="Creator" type="text" id="media-author" value="" name="media_author" />
+                          <input placeholder="Creator" type="text" id="article-author" value="" name="article_author" />
                       </div>
 
                       <!-- Source -->

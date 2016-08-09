@@ -37,13 +37,11 @@
 
                       <!-- Author/Creator -->
                       <div id="step3_audio">
-
-                          <input placeholder="Creator / Speaker / Podcast" type="text" id="audio-author" value="" name="audio_author" />
+                          <input placeholder="Creator / Speaker / Podcast" type="text" id="article-author" value="" name="article_author" />
                       </div>
 
                       <!-- Source -->
                       <div id="step4_audio">
-
                           <input placeholder="Source / Network" type="text" id="source" value="" size="20" name="source" />
                       </div>
 

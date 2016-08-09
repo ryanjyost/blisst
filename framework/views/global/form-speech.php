@@ -38,7 +38,7 @@
                       <!-- Author/Creator -->
                       <div id="step3_speech">
 
-                          <input placeholder="Speaker(s)" type="text" id="speech-author" value="" name="speech_author" />
+                          <input placeholder="Speaker(s)" type="text" id="article-author" value="" name="article_author" />
                       </div>
 
                       <!-- Source -->
