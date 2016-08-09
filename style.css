@@ -3,7 +3,7 @@
 
 /*
 
-Theme Name: X &ndash; Child Theme &ndash; Blisst
+Theme Name: X &ndash; Child Theme &ndash; Blisst &ndash; 8-8-2016
 Theme URI: http://theme.co/x/
 Author: Themeco
 Author URI: http://theme.co/
@@ -462,6 +462,16 @@ footer{
 	color:#BDBDBD;
 	text-align:right;
 
+}
+
+.loop-post-link{
+	display: block;
+	font-size: 12px;
+	float: left;
+}
+
+.loop-post-link:hover{
+	text-decoration: underline;
 }
 
 /*----------------------------------------------------------------------------------
@@ -1517,9 +1527,22 @@ Userpro login
 
  }
 
+/*----------------------------------------------------------------------------------
 
+	Single Post Page
 
+ ----------------------------------------------------------------------------------*/
 
+#post-middle{
+	padding: 5vh 3vw 3vh 3vw;
+}
+
+.post-comments{
+	width:98%;
+	margin: auto;
+	padding:5px 0px 0px 0px;
+
+}
 
 
 

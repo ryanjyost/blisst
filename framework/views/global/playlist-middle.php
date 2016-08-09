@@ -10,26 +10,26 @@
 ?>
 
   <?php
-        $cat_id = $cat->cat_ID;
-        $cat_name = $cat->name;
-        $cat_slug = $cat->slug;
         $tax = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+        $list_name = $tax->name;
 
-
+        $current_user = wp_get_current_user();
+        $username = $current_user ->user_login;
   ?>
 
 
 
-          <div class="row">
-              <div class="share-button">
-                    Post
-              </div>
-          </div>
+
+
+    <!-- Show Post button if not a user list   -->
+    <?php if(!username_exists($list_name) || $username == $list_name): ?>
+        <div class="row">
+            <div class="share-button">Post</div>
+        </div>
+    <?php endif;  ?>
 
             <!--         jQuery form to submit media            -->
           <div class="form-window">
-
-
                   <!--         Login form if user is not logged in           -->
                   <div class="form-login">
                       <?php if(!is_user_logged_in()): ?>
@@ -41,47 +41,49 @@
                   <!--        Form when user is logged in          -->
                   <?php if(is_user_logged_in()): ?>
 
+                      <?php if(username_exists($list_name) && $username != $list_name): ?>
+
+                        <?php  else:  ?>
+
                           <!--         Select the post type            -->
                           <?php x_get_view( 'global', 'form-select-type' ); ?>
 
+                              <!--          Load the form, per post-type chosen            -->
+                              <div id="form-article">
+                                  <?php x_get_view( 'global', 'form-article' ); ?>
+                              </div>
 
-                          <!--          Load the form, per post-type chosen            -->
+                              <div id="form-essay">
+                                  <?php x_get_view( 'global', 'form-essay' ); ?>
+                              </div>
 
-                          <div id="form-article">
-                              <?php x_get_view( 'global', 'form-article' ); ?>
-                          </div>
+                              <div id="form-book">
+                                  <?php x_get_view( 'global', 'form-book' ); ?>
+                              </div>
 
-                          <div id="form-essay">
-                              <?php x_get_view( 'global', 'form-essay' ); ?>
-                          </div>
+                              <div id="form-study">
+                                  <?php x_get_view( 'global', 'form-study' ); ?>
+                              </div>
 
-                          <div id="form-book">
-                              <?php x_get_view( 'global', 'form-book' ); ?>
-                          </div>
+                              <div id="form-audio">
+                                  <?php x_get_view( 'global', 'form-audio' ); ?>
+                              </div>
 
-                          <div id="form-study">
-                              <?php x_get_view( 'global', 'form-study' ); ?>
-                          </div>
+                              <div id="form-speech">
+                                  <?php x_get_view( 'global', 'form-speech' ); ?>
+                              </div>
 
-                          <div id="form-audio">
-                              <?php x_get_view( 'global', 'form-audio' ); ?>
-                          </div>
+                              <div id="form-video">
+                                  <?php x_get_view( 'global', 'form-video' ); ?>
+                              </div>
 
-                          <div id="form-speech">
-                              <?php x_get_view( 'global', 'form-speech' ); ?>
-                          </div>
+                              <div id="form-media">
+                                  <?php x_get_view( 'global', 'form-media' ); ?>
+                              </div>
 
-                          <div id="form-video">
-                              <?php x_get_view( 'global', 'form-video' ); ?>
-                          </div>
-
-                          <div id="form-media">
-                              <?php x_get_view( 'global', 'form-media' ); ?>
-                          </div>
-
+                      <?php endif;  ?>
                   <?php endif;  ?>
             </div>
-
 
     <div class="category-middle-loop">
 

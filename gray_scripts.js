@@ -497,16 +497,28 @@
 	});
 
 
+	//================================================
 	//expand all comments
+
+	var $expanded=0;
+
 	$('#expand-all').click(function(){
-		$(".post-comment-box").slideToggle();
 		$(this).toggleText('Expand all','Collapse all')
+
+		if($expanded==0){
+			$(".post-comment-box").slideDown('fast');
+			$('.plus-icon').addClass('collapse-plus');
+			$expanded = 1;
+		} else{
+			$(".post-comment-box").slideUp('fast');
+			$('.plus-icon').removeClass('collapse-plus');
+			$expanded = 0;
+		}
 	});
 
 
 	//================================================
-	// When post comment box is expanded
-
+	// When click the plus icon
 		$('.plus-icon').click(function(){
 				$(this).toggleClass('collapse-plus');
 		});
@@ -520,8 +532,7 @@
 //===============================================================================================================================================
 
 //================================================
-// Dropdown on topic and playlist descriptions
-
+// Dropdown for topic and playlist descriptions
 	$('#dropdown').click(function(){
 			$('.subcat-desc').slideToggle('fast');
 			$(this).toggleClass('collapse');
@@ -533,6 +544,17 @@
 		$('#add-topic').slideToggle('fast');
 		$(this).toggleText("+", "-").toggleClass('collapse-add-btn');
 	});
+
+//================================================
+// Start with post comment expanded on single post page
+	if ($('#post-middle').length) {
+		$('.post-comment-box').css("display", "block")
+		$('.plus-icon').addClass("collapse-plus") // start with icon in "open" stage (ready to be collpased)
+		$('.loop-post-link').css("display", "none"); // hide the "join the discussion" link if on single post page
+	};
+
+
+
 
 
 

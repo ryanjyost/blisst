@@ -88,7 +88,7 @@
               <!-- Content Section -->
               <div class="post-comment-box">
                   <?php echo $post->post_content; ?>
-                  <p> posted by <?php
+                  <p><a class="loop-post-link" href="<?php echo get_permalink($post); ?>"> Join the discussion </a>posted by <?php
                     $author = get_the_author();
                     $date = human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago';
                     echo $author; echo " " ; echo $date; ?>

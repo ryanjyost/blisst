@@ -21,7 +21,10 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
 
 <div class="x-container max width main">
 
-	<?php x_get_view( 'global', 'category-template' ); ?>
+		<!--  Main sidebar -->
+		<div class="main-side">
+		     <?php x_get_view( 'global', 'main-side' ); ?>
+		</div>
 
 </div>
 

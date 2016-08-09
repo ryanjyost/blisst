@@ -2,72 +2,39 @@
 <?php
 
 // =============================================================================
-// VIEWS/ETHOS/SINGLE-ARTICLE.PHP
-// -----------------------------------------------------------------------------
-// Single article output for Ethos.
+// Single Article Post
 // =============================================================================
 
-$fullwidth = get_post_meta( get_the_ID(), '_x_post_layout', true );
+$is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enable' ) == '1';
 
 ?>
 
-
 <?php get_header(); ?>
-
-<!--   Call the post    -->
-<?php while ( have_posts() ) : the_post(); ?>
-<!--                     -->
 
 <div class="x-container max width main">
 
+      <!--  Main sidebar -->
+      <div class="main-side">
+           <?php x_get_view( 'global', 'main-side' ); ?>
+      </div>
 
-  <!--  Main sidebar -->
-<div class="main-side">
+      <!--  Middle Category Section w/ loop -->
+      <div id="post-middle" class="column-middle">
+          <?php x_get_view( 'global', 'loop-basic' ); ?>
 
-     <?php x_get_view( 'global', 'main-side' ); ?>
-
-</div>
-
- <div class="media-cont">
-
-
-
-        <div class="media-slider">
-
-              <div class ="eg-media">
-                   <?php echo do_shortcode('[ess_grid alias="article-top"]')?>
-              </div>
-
-        </div>
-
-
-   <!--  Middle media -->
-
-      <div class="media-middle">
-
-           <?php x_get_view( 'global', 'media-middle' ); ?>
+          <div class = "post-comments">
+             <?php disqus_embed('mumblingmillennials'); ?>
+          </div>
 
       </div>
 
-
-
-
-
-
-
-
-            <!--  Middle Category Section w/ loop -->
-            <div class= "media-right">
-
-              <?php x_get_view( 'global', 'media-right' ); ?>
-
-            </div>
-
-  </div>
+      <!-- Right Column -->
+      <div id="cat-right" class="column-right">
+          <?php x_get_view( 'global', 'search-right' ); ?>
+      </div>
 
 </div>
 
-<?php endwhile; ?>
 
 
 <?php get_footer(); ?>
