@@ -12,7 +12,11 @@
         <div class="post-cont">
               <!-- Post Title -->
               <div class="loop-title">
-                   <?php echo $post->post_title; ?>
+                  <a href="<?php
+                        // Get the source link for the title
+                        $sourcelink = get_field('source_link'); echo "$sourcelink" ;?>">
+                        <?php echo $post->post_title; ?>
+                  </a>
               </div>
 
                   <!-- Plus icon by Icons8 -->
@@ -75,9 +79,7 @@
 
 
               <!-- Apply source link to the post title -->
-              <a href="<?php
-                    // Get the source link for the title
-                    $sourcelink = get_field('source_link'); echo "$sourcelink" ;?>" rel="post">
+              <a href="<?php echo get_permalink($post) ?>" rel="post">
                     <span class="link-spanner"></span>
               </a>
 

@@ -483,6 +483,31 @@
 //
 //===============================================================================================================================================
 
+	//switch from posts to comments
+	var $show_posts=1
+
+	$('#toggle-posts').click(function(){
+		$(this).toggleText('Recent Posts','Recent Comments');
+		if($show_posts==1){
+			$('.posts-middle').fadeOut('fast');
+			$('.comments-middle').fadeIn('slow');
+			$show_posts = 0;
+		}
+		else{
+			$('.posts-middle').fadeIn('slow');
+			$('.comments-middle').fadeOut('fast');
+			$show_posts=1;
+		}
+
+	});
+
+
+
+
+
+
+
+
 	// switch between post type icon and expand icon on hover
 	$('.loop-cont').hover(function(){
 		$(this).find('img').toggle();

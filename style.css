@@ -238,6 +238,8 @@ textarea{
 
 
 
+
+
 /*----------------------------------------------------------------------------------
 
  Header
@@ -326,32 +328,26 @@ footer{
 }
 
 
- .loop-title {
+  .loop-title{
+  	width: 90%;
+  	display: inline-block;
+  }
+
+  .loop-title a{
  			color:#585858;
  			font-size:20px;
  			line-height:24px;
  			position:relative;
-			width:90%;
-			display:inline-flex;
+			max-width:80%;
+			display:inline;
 			font-weight:400;
 			padding-bottom:5px;
+			z-index: 100;
 
  		}
 
-		 		.loop-title a{
-		 			color:#585858;
-		 			font-size:20px;
-		 			padding:0px 0px 5px 0px;
-		 			line-height:24px;
-		 			font-weight:400;
-		 			position:relative;
-		 			z-index:100;
-		 			width:80%;
 
-
-		 		}
-
-		 		.loop-title a:hover{
+		 		 .loop-title a:hover{
 		 			color:#424242;
 		 			position:relative;
 		 			text-decoration:underline !important;
@@ -359,7 +355,7 @@ footer{
 
 		 		}
 
-		 		.loop-title a:visited{
+		 		 .loop-title a:visited{
 		 			font-style:italic;
 		 		}
 
@@ -473,6 +469,70 @@ footer{
 .loop-post-link:hover{
 	text-decoration: underline;
 }
+
+p#toggle-posts  {
+	color: #a4a4a4;
+	font-size: 12px;
+	float: right;
+	text-align: center;
+	display: inline-block;
+	width: 20%;
+	cursor: default;
+	border-bottom: 1px solid #f2f2f2;
+
+
+}
+
+
+/*----------------------------------------------------------------------------------
+
+ Recent Comments
+
+ ----------------------------------------------------------------------------------*/
+
+.comments-middle{
+	padding:10vh 2vh 0px 2vh;
+	width: 95%;
+	margin: auto;
+	display: none;
+}
+
+
+.comments-middle p{
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 300;
+	letter-spacing: .015em;
+}
+
+.comments-middle a{
+	color: #a4a4a4;
+}
+
+.dsq-widget-meta{
+
+}
+
+li.dsq-widget-item{
+	margin: 0px 0px 3vh 0px !important;
+	border-bottom: 1px solid #f2f2f2 ;
+	padding-bottom: 1vh;
+}
+
+p.dsq-widget-meta{
+	line-height: 20px !important;
+	color: #a4a4a4;
+}
+
+a.dsq-widget-user{
+	color: #92E2F9 ;
+	font-size: 14px;
+}
+
+
+
+
+
 
 /*----------------------------------------------------------------------------------
 

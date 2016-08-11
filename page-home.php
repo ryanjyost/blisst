@@ -20,13 +20,22 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
 
   	<!--  Middle Category Section w/ loop -->
 	<div id="cat-middle" class= "column-middle">
+   <p id="toggle-posts">Recent Posts</p>
+
+      <div class="comments-middle">
+            <script type="text/javascript" src="http://mumblingmillennials.disqus.com/recent_comments_widget.js?num_items=50&hide_mods=0&hide_avatars=1&avatar_size=32&excerpt_length=500"></script>
+      </div>
 
 
-	<div class="row">
+
+
+<!-- Posts  -->
+<div class="posts-middle">
+  <div class="row">
       <div class="share-button">
             Post
       </div>
-    </div>
+  </div>
 
 	<!--         jQuery form to submit media            -->
   	<div class="form-window">
@@ -81,12 +90,13 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
           <?php endif;  ?>
 	</div>
 
+
 			<div class="category-middle-loop">
 
         <?php x_get_view( 'global', 'loop-filter' ); ?>
 
 			       <?php
-		                  $args = array( 'post_type' => array('article', 'essay', 'book', 'audio', 'video', 'study', 'speech', 'media'), 'posts_per_page' => -1,  'orderby' => 'date', 'order' => 'DESC');
+		                  $args = array( 'post_type' => array('article', 'essay', 'book', 'audio', 'video', 'study', 'speech', 'media'), 'posts_per_page' => 100,  'orderby' => 'date', 'order' => 'DESC');
 		                  $loop = new WP_Query( $args );
 			        ?>
 
@@ -98,6 +108,7 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
 			</div>
 
 	</div>
+</div>
 
 	<!-- Right Column -->
 	<div id="cat-right" class="column-right">
