@@ -9,21 +9,23 @@
 
 ?>
 
+<div class="search-middle">
 
-
+    <div class="main-menu">
+          <?php x_get_view( 'global', 'main-menu' ); ?>
+    </div>
 
    <div class="search-box">
-
       <form method="get" id="searchform" class="form-search-box" action="<?php echo esc_url( home_url( '/' ) ); ?>">
          <label for="s" class="visually-hidden"><?php _e( 'Search', '__x__' ); ?></label>
          <input type="text" id="s" class="search-page-query" name="s" placeholder="<?php the_search_query(); ?>" />
       </form>
-
-
    </div>
 
 
- <div class="category-middle-loop">
+
+
+
 <?php
     global $query_string;
     $query_args = explode("&", $query_string);

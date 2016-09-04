@@ -36,52 +36,21 @@ add_theme_support( 'post-thumbnails', array('article'));
 
 
 //Random Button
+function random_link() {
 
-add_action('init','random_post');
-function random_post() {
-       global $wp;
-       $wp->add_query_var('random');
-       add_rewrite_rule('random/?$', 'index.php?random=1', 'top');
-}
+    $args = array(
+      'post_type'=>array('article','essay', 'book', 'audio', 'study', 'video', 'speech', 'media'),
+      'orderby'=>'rand',
+      'numberposts'=>1);
 
-add_action('template_redirect','random_template');
-function random_template() {
-       if (get_query_var('random') == 1) {
+    $random_post = get_posts($args);
+    foreach($random_post as $post) {$link1 = get_permalink($post);}
 
-               $articles = get_posts('post_type=article&orderby=rand&numberposts=1');
-                foreach($articles as $post) {$link1 = get_permalink($post);}
 
-               $essays = get_posts('post_type=essay&orderby=rand&numberposts=1');
-               foreach($essays as $post) {$link2 = get_permalink($post);}
+           return $link1;
 
-               $books = get_posts('post_type=book&orderby=rand&numberposts=1');
-               foreach($book as $post) {$link3 = get_permalink($post);}
+   exit;
 
-                $audio = get_posts('post_type=audio&orderby=rand&numberposts=1');
-               foreach($audio as $post) {$link4 = get_permalink($post);}
-
-               $study = get_posts('post_type=study&orderby=rand&numberposts=1');
-               foreach($study as $post) {$link5 = get_permalink($post);}
-
-                $video = get_posts('post_type=video&orderby=rand&numberposts=1');
-               foreach($video as $post) {$link6 = get_permalink($post);}
-
-               $speech = get_posts('post_type=speech&orderby=rand&numberposts=1');
-               foreach($speech as $post) {$link7 = get_permalink($post);}
-
-               $media = get_posts('post_type=media&orderby=rand&numberposts=1');
-               foreach($media as $post) {$link8 = get_permalink($post);}
-
-               $gray = get_posts('post_type=gray&orderby=rand&numberposts=1');
-               foreach($gray as $post) {$link10 = get_permalink($post);}
-
-               $shuffle_links = array($link1,$link2,$link3,$link4,$link5,$link6,$link7,$link8,$link9,$link10);
-                 shuffle($shuffle_links);
-                    foreach($shuffle_links as $link) {
-                       wp_redirect($link,307);
-                     }
-               exit;
-       }
 }
 
 
@@ -224,5 +193,62 @@ function save_post_data() {
         echo "<meta http-equiv='refresh' content='0;url=$location' />"; exit;
         } // end IF
 }
+
+function save_comment_data() {
+        if ( empty($_POST) || !wp_verify_nonce($_POST['name_of_nonce_field'],'name_of_my_action') )
+        {
+        print 'Sorry, your nonce did not verify.';
+        exit;
+        }else{
+            //get category id for the post_category array
+            $cat = get_category( get_query_var( 'cat' ) );
+            $the_cat_id = $cat->term_id;
+            //get playlist id for the tax_input array
+            $tax = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+            //get custom fields from form to pass into meta_input
+            $source_link = $_POST['source_link'];
+            $article_author = $_POST['article_author']; // "article_author" merely to differentiate from "author"
+            $source = $_POST['source'];
+            $description = $_POST['post_content'];
+            $the_cat_id = $_POST['cat'];
+            // Add the content of the form to $post as an array
+            $post = array(
+                'post_title' => wp_strip_all_tags( $title ),
+                'post_content' => $description,
+                'post_category' => array($_POST['cat']),
+                'tags_input' => $tags,
+                'post_status' => 'publish',
+                'post_type' => $_POST['post-type'],
+                'meta_input' => array('source_link' => $source_link, 'article_author' => $article_author, 'source' => $source),
+                'tax_input' => array($tax_slug)
+            );
+        $post_id = wp_insert_post($post);  // http://codex.wordpress.org/Function_Reference/wp_insert_post
+        wp_set_object_terms($post_id, $tax->slug, 'playlist' );
+
+        if(is_home()){
+            $location = esc_url( home_url( '/' ) );// redirect to home page
+        } else {
+            $location = the_permalink();// redirect to current page
+        };
+
+        echo "<meta http-equiv='refresh' content='0;url=$location' />"; exit;
+        } // end IF
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

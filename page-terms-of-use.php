@@ -19,7 +19,10 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
 	</div>
 
   	<!--  Page Content -->
-  	<div class="page-right">
+  	<div class="column-middle">
+
+  	 	<div class="top-home-btn"><a href = "<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></div>
+
   		<div class="text-area">
 
 		  <h2>Terms of Use</h2>
@@ -31,7 +34,7 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
 
 				Please read the Terms of Use (below) before using blisst.net. By continuing to use blisst.net, you consent to the conditions set forth in the Terms of Use and agree to abide by our <a href="http://localhost:8888/mumbling/code-of-conduct">Code of Conduct</a>. If you do not consent, then do not use this website.<br><br>
 
-				Creation of an account with blisst.net, the contribution of any content to this website, including submitting a post, commenting, etc., and sharing any content found on this website constitutes a legally binding agreement to consent and comply to the conditions laid out in the Terms of Use, Code of Conduct and <a href="http://localhost:8888/mumbling/privacy-policy/">Privacy Policy</a>.<br><br>
+				Creation of an account with blisst.net, the contribution of any content to this website, including submitting a post, commenting, etc., and sharing any content found on this website constitutes a legally binding agreement to consent and comply to the conditions laid out in the Terms of Use and Code of Conduct.<br><br>
 
 				POSTING ANONYMOUSLY DOES NOT, IN ANY WAY, IMPACT THE BELOW TERMS OF USE. AND THOUGH WE WILL DO OUR BEST TO KEEP ANONYMOUS POSTING TRULY ANONYMOUS, WE CAN NOT GUARANTEE YOUR ANONYMITY.<br><br>
 

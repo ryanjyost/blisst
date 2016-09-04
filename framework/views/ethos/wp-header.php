@@ -16,6 +16,8 @@
     <?php x_get_view( 'global', '_topbar' ); ?>
     <?php x_get_view( 'global', '_navbar' ); ?>
     <?php x_get_view( 'ethos', '_breadcrumbs' ); ?>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
   </header>
 
   <?php x_get_view( 'global', '_slider-below' ); ?>

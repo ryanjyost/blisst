@@ -1,3 +1,6 @@
+
+
+
 (function($) {
 	$(document).ready(function(){
 
@@ -21,6 +24,9 @@
 			    }
 			});
 
+
+
+
 //=================================================================================================================================================
 //
 //jQuery Form
@@ -36,8 +42,16 @@
 		//Start and reset the form w/ share button
 		//=======================================
 
+
 				// toggle to open and close the form window
 				$('.share-button').click(function(){
+					$('body').on('keyup keypress', function(e) {
+					  var keyCode = e.keyCode || e.which;
+					  if (keyCode === 13) {
+					    e.preventDefault();
+					    return false;
+					  }
+					})
 
 					//toggle text on the share button
 					$('.share-button').toggleText('Post', 'Nevermind');
@@ -405,71 +419,89 @@
 
 //===============================================================================================================================================
 //
-//Main Side Accordion Menu
+//Main menu Accordion Menu
 //
 //===============================================================================================================================================
-
-
 
 	var $active = 0;
 	var $prev = 0;
 	var $dropdown = 0; //0 for closed, 1 for open
 
-		$('.main-side-label').click(function(){
+		$(document).mouseup(function (e)
+			{
+
+			    var container = $('#main-menu-drop-'+$active.toString());
+
+			    if (!container.is(e.target) // if the target of the click isn't the container...
+			        && container.has(e.target).length === 0 && $dropdown==1) // ... nor a descendant of the container
+			    {
+			        container.slideUp('fast');
+
+			    }
+			    else{
+
+
+
+
+			    }
+
+			});
+
+		$('.main-menu-label').click(function(){
 			$prev=$active;
 			var $id = this.id;
 			//$(".share-button").text(id.toString());//test step value
 
 					//More
-					if($id=='main-side-1'){
+					if($id=='main-menu-1'){
 						$active=1;
 					};
 
 					//topics
-					if($id=='main-side-2'){
+					if($id=='main-menu-2'){
 						$active=2;
 					};
 
 					//lists
-					if($id=='main-side-3'){
+					if($id=='main-menu-3'){
 						$active=3;
 					};
 
 					//feedback
-					if($id=='main-side-4'){
+					if($id=='main-menu-4'){
 						$active=4;
 					};
 
 			if($prev==0){
-				$('#main-side-drop-'+$active.toString()).slideDown('fast');
-				$('#main-side-'+$active.toString()).addClass('main-side-label-active');
+				$('#main-menu-drop-'+$active.toString()).slideDown('fast');
+				$('#main-menu-'+$active.toString()).addClass('main-menu-label-active');
 				$dropdown = 1;
 			}
 
 			else if($prev==$active && $dropdown==1){
-				$('#main-side-drop-'+$prev.toString()).slideUp('fast');
-				$('#main-side-'+$active.toString()).removeClass('main-side-label-active');
+				$('#main-menu-drop-'+$prev.toString()).slideUp('fast');
+				$('#main-menu-'+$active.toString()).removeClass('main-menu-label-active');
 				$dropdown=0;
 			}
 
 			else if ($prev==$active && $dropdown==0){
-				$('#main-side-drop-'+$prev.toString()).slideDown('fast');
-				$('#main-side-'+$active.toString()).addClass('main-side-label-active');
+				$('#main-menu-drop-'+$prev.toString()).slideDown('fast');
+				$('#main-menu-'+$active.toString()).addClass('main-menu-label-active');
 				$dropdown=1;
 			}
 
 			else if($prev !=$active && $dropdown==1){
-				$('#main-side-drop-'+$prev.toString()).slideUp('fast');
-				$('#main-side-'+$prev.toString()).removeClass('main-side-label-active');
+				$('#main-menu-drop-'+$prev.toString()).slideUp('fast');
+				$('#main-menu-'+$prev.toString()).removeClass('main-menu-label-active');
 
-				$('#main-side-drop-'+$active.toString()).slideDown('fast');
-				$('#main-side-'+$active.toString()).addClass('main-side-label-active');
+				$('#main-menu-drop-'+$active.toString()).slideDown('fast');
+				$('#main-menu-'+$active.toString()).addClass('main-menu-label-active');
 				$dropdown = 1;
 			}
 
 			else if($prev !=$active && $dropdown==0){
-				$('#main-side-drop-'+$active.toString()).slideDown('fast');
-				$('#main-side-'+$active.toString()).addClass('main-side-label-active');
+				$('#main-menu-drop-'+$active.toString()).slideDown('fast');
+				$('#main-menu-'+$active.toString()).addClass('main-menu-label-active');
 				$dropdown = 1;
 			}
 
@@ -484,21 +516,23 @@
 //===============================================================================================================================================
 
 	//switch from posts to comments
-	var $show_posts=1
 
-	$('#toggle-posts').click(function(){
-		$(this).toggleText('Recent Posts','Recent Comments');
-		if($show_posts==1){
-			$('.posts-middle').fadeOut('fast');
+	$('#toggle-to-comments').click(function(){
+			$('.loop-middle').fadeOut('fast');
 			$('.comments-middle').fadeIn('slow');
-			$show_posts = 0;
-		}
-		else{
-			$('.posts-middle').fadeIn('slow');
-			$('.comments-middle').fadeOut('fast');
-			$show_posts=1;
-		}
+			$('#toggle-to-posts').removeClass('toggle-btn-active');
+			$('#toggle-to-posts').addClass('toggle-btn');
+			$(this).removeClass('toggle-btn');
+			$(this).addClass('toggle-btn-active');
+	});
 
+	$('#toggle-to-posts').click(function(){
+			$('.loop-middle').fadeIn('slow');
+			$('.comments-middle').fadeOut('fast');
+			$('#toggle-to-comments').removeClass('toggle-btn-active');
+			$('#toggle-to-comments').addClass('toggle-btn');
+			$(this).removeClass('toggle-btn');
+			$(this).addClass('toggle-btn-active');
 	});
 
 
@@ -556,12 +590,6 @@
 //
 //===============================================================================================================================================
 
-//================================================
-// Dropdown for topic and playlist descriptions
-	$('#dropdown').click(function(){
-			$('.subcat-desc').slideToggle('fast');
-			$(this).toggleClass('collapse');
-	});
 
 //================================================
 // Dropdown form to add topic
@@ -577,6 +605,14 @@
 		$('.plus-icon').addClass("collapse-plus") // start with icon in "open" stage (ready to be collpased)
 		$('.loop-post-link').css("display", "none"); // hide the "join the discussion" link if on single post page
 	};
+
+//================================================
+// Hide home message
+	$('.home-message').find('h5').click(function(){
+		$('.home-message').hide();
+	});
+
+//================================================
 
 
 

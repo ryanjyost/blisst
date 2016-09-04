@@ -19,7 +19,10 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
 	</div>
 
   	<!--  Page Content -->
-  	<div class="page-right">
+  	<div class="column-middle">
+
+  	 		<div class="top-home-btn"><a href = "<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></div>
+
   		<div class="text-area">
 
 		  <h2>Code of Conduct</h2>

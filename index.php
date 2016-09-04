@@ -3,16 +3,23 @@
 // =============================================================================
 // INDEX.PHP
 // -----------------------------------------------------------------------------
-// Handles output of pages and posts if a more specific template file isn't
-// present. Must be present for theme to function properly.
-//
-// Content is output based on which Stack has been selected in the Customizer.
-// To view and/or edit the markup of your Stack's index, first go to "views"
-// inside the "framework" subdirectory. Once inside, find your Stack's folder
-// and look for a file called "wp-index.php," where you'll be able to find the
-// appropriate output.
-// =============================================================================
+
+$is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enable' ) == '1';
 
 ?>
 
-<?php x_get_view( x_get_stack(), 'wp', 'index' ); ?>
+
+<html>
+
+<?php get_header(); ?>
+
+<div class="x-container max width main">
+
+	<?php x_get_view( 'global', 'search-template' ); ?>
+
+</div>
+
+
+
+<?php get_footer(); ?>
+</html>

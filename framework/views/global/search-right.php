@@ -9,12 +9,11 @@
 ?>
 
 <div class = "category-top">
-    <div class="category-title">Everything</div>
+    <div class="toggle-btn">
+GET RID OF TOPICS, IDIOT!!!
+    </div>
 </div>
 <br>
-
-
-
 
 
             <!-- TOPICS -->

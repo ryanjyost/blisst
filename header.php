@@ -16,14 +16,10 @@
 
 <!DOCTYPE html>
 <!--[if IE 9]><html class="no-js ie9" <?php language_attributes(); ?>><![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
+<!--[if gt IE 9]><!--><!--html class="no-js" <?php language_attributes(); ?>--><!--<![endif]-->
 
 <head>
-
-
-  <?php wp_head(); ?>
-
-
+  		<?php wp_head(); ?>
 </head>
 
 
@@ -31,7 +27,6 @@
 
 
   <header class="header-cont" role="banner">
-    <?php x_get_view( 'global', '_navbar' ); ?>
     <?php x_get_view( 'ethos', '_breadcrumbs' ); ?>
 
   </header>

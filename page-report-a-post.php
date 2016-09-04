@@ -19,19 +19,21 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
 	</div>
 
   	<!--  Page Content -->
-  	<div class="page-right">
+  	<div class="column-middle">
+
+  	 	<div class="top-home-btn"><a href = "<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></div>
+
   		<div class="text-area">
 
-		  <h2>Report Shenanigans</h2>
+				  <h2>Report Shenanigans</h2>
 
-		  <p>
+				  <p>
+				  	Please report posts that you believe warrant review and potential deletion, for reasons such as plagiarism, violations of our Code of Conduct or Terms of Use, copyright violations, illegal material, libel, trolling, and anything else you believe undermines the integrity of this site. When in doubt, report the post. Thanks for your help!
+				  </p><br><br><br>
 
-		  Please report posts that you believe warrant review and potential deletion, for reasons such as plagiarism, violations of our Code of Conduct or Terms of Use, copyright violations, illegal material, libel, trolling, and anything else you believe undermines the integrity of this site. When in doubt, report the post. Thanks for your help!
-		  </p><br><br><br>
 
-
-		  <?php echo do_shortcode('[contact-form-7 id="4156" title="Report a Post"]'); ?>
-		</div>
+				  <?php echo do_shortcode('[contact-form-7 id="4156" title="Report a Post"]'); ?>
+				</div>
   	</div>
 
 </div>

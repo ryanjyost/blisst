@@ -21,12 +21,9 @@
 
 
 
-    <!-- Show Post button if not a user list   -->
-    <?php if(!username_exists($list_name) || $username == $list_name): ?>
-        <div class="row">
-            <div class="share-button">Post</div>
-        </div>
-    <?php endif;  ?>
+<div class="main-menu">
+        <?php x_get_view( 'global', 'main-menu' ); ?>
+</div>
 
             <!--         jQuery form to submit media            -->
           <div class="form-window">
@@ -85,9 +82,10 @@
                   <?php endif;  ?>
             </div>
 
-    <div class="category-middle-loop">
+    <div class="loop-middle">
 
-      <?php x_get_view( 'global', 'loop-filter' ); ?>
+        <?php x_get_view( 'global', 'loop-filter' ); ?>
+
 
        <?php
               //get playlist information for later
