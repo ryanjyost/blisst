@@ -28,10 +28,10 @@
           <a href = "<?php echo $link1; ?>"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADBklEQVRoQ+2YzVXbQBDHZ/DBvoVUEFwBdBBcQcQBtLeECjAVhFSAqYDkNuKCUoGdChIqgA5CbhIHJm/8dvPWerZ2Le3Gwo+9Srva3/znS4OwJQu3hANeQbqm5KsisRQ5OTlJnp6eZnmeP67zjU4pIhA7Ozu3zPyrLMvROjCdAkmSZLff788QcX9dmE6BiCs1hekcSFMYJ4hSilcFnciPiHlRFFfr+LNYfTAYnDFzgogHrqD2cbNWIOYCPh8y72rXmfoAWOfflWV5WGcsJ0idtZRSh8w80cGZZ1l25LJumqa3iJgw8x0ijoloVt1jw8p7LgjZ3wrE8ucHRHwDAKNlFzMXFXAAmDLzn7Is95ZZuAlEEBA5RCl1AQCfAWBGRKNVqiilpgAgMF+ISPYsrKYQwUD0BYwqQyJ6qF7y+Pj4oNfr/axTwyqIXu5kf6O1a5nD0jSVWDkDgG9E9KkKopT6CgAfmfkqy7LxKtU23qIopfYA4F5fcEGVumeu5OD7PJgiOlbmVq+qYtRYpZbvZeveCw0yV4WZH8uyHEpW0sXv9zKlQgCYM4KCaFWkLrw3mcnKaD+ISDJWlBUDxNSKuSqDwSABgGtXjWlLFxzEVoWZz7Msm0iMLMtkbS8fJf3ah5p6AAAPRDQMeeFVZ0VRRKsiRfEdAJwSkWSzqCsmiBRFiY3/oko0EFuV5+fno5ubmzymJFFAlFLXRHSapukYES9dzWQIwOAgplWX2CiKIu/3+14tfluYGCALrbopiMz8PcsyqSlRVlAQuzksiuKtaVEsVZa2+CHIQoO8/KZxa9p4V6v+In6s9K/uPSLuAsDSODCK2S1+NTY2Pvv1bdWVUgstfhWk6bhUzmkd7BU1fMdB/368QsG0AtEDukuZGvrWiTRNc0T8oMet5zUDurWm8k6QutmvsabvNFDet93Ht374jGRbgeixpwyxJw2G2GM9xN53AfkYygni+kiM500mjp0DaQIRJGuFVKQpROdAOjH7DaXMxme/oUCantO5YH8FaWqBru3bGtf6C35BglEur4k1AAAAAElFTkSuQmCC" ></a>
 
 
-        <?php if(!is_single() && !is_search()) : ?>
+        <?php if(!is_single() && !is_search() && !is_404()) : ?>
            <div class="share-button">Post</div>
         <?php endif;  ?>
-        <?php if(is_single() || is_search()) : ?>
+        <?php if(is_single() || is_search() || is_404()) : ?>
            <div class="share-button"><a href = "<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></div>
         <?php endif;  ?>
 

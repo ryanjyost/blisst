@@ -11,10 +11,10 @@
 
                       <!-- Topic dropdown & Link -->
                       <div id="step1_media">
-                          <?php
+                            <?php
                                 //get category id if on category/topic page
-                                $cat = get_category( get_query_var( 'cat' ) );
-                                $cat_id = $cat->term_id;
+                               $cat = get_category( get_query_var( 'cat' ) );
+                               $cat_id = $cat->term_id;
                                     if($cat_id>0){
                                       $the_cat_id = $cat_id;
                             ?>
@@ -23,7 +23,7 @@
                                   <input type="hidden" name="action" value="<?php echo $the_cat_id ?>" />
 
                             <?php } else{
-                                      wp_dropdown_categories( 'selected=112&echo=1&hide_empty=0&hierarchical=1&orderby=name&order=ASC&show_option_none=Pick a topic&taxonomy=category');
+                                     // wp_dropdown_categories( 'selected=112&echo=1&hide_empty=0&hierarchical=1&orderby=name&order=ASC&show_option_none=Pick a topic&taxonomy=category');
                                     }
                             ?>
                           <input placeholder="URL" autocomplete="off" type="text" id="source-link" value="" name="source_link" />

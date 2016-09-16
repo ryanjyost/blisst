@@ -25,7 +25,9 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
           </div>
 
           <div class="post-area">
+          <div id="single-post">
             <?php x_get_view( 'global', 'loop-basic' ); ?>
+          </div>
               <div class = "post-comments">
                  <?php disqus_embed('mumblingmillennials'); ?>
               </div>
