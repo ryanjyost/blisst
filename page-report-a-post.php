@@ -21,7 +21,9 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
   	<!--  Page Content -->
   	<div class="column-middle">
 
-  	 	<div class="top-home-btn"><a href = "<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></div>
+  	 	<div class="main-menu">
+          <?php x_get_view( 'global', 'main-menu' ); ?>
+    	</div>
 
   		<div class="text-area">
 

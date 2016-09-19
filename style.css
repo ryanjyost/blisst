@@ -1263,12 +1263,12 @@ p.toggle-btn-active{
 
 /*----------------------------------------------------------------------------------
 
- Recent Comments
+ Recent Comments Feed
 
  ----------------------------------------------------------------------------------*/
 
 .comments-middle{
-	padding:5vh 2vh 0px 2vh;
+	padding:0vh 2vh 0px 2vh;
 	width: 90%;
 	margin: auto;
 	display: none;
@@ -1288,33 +1288,70 @@ p.toggle-btn-active{
 	font-size: 10px;
 }
 
-.dsq-widget-meta{
-
+.comments-middle ul{
+	display: block;
+	height:100px;
 }
 
-li.dsq-widget-item{
-	margin: 0px 0px 2vh 0px !important;
-	padding: 3vh 4% 2vh 4% !important;
-	background-color: #fafafa;
-	border-radius: 5px;
+.comments-middle li{
+	background-color: #ffffff;
+	border-top: 0px solid #f2f2f2;
+	padding: 10px 10px 10px 10px;
+	margin: 5px 5px 25px 5px;
 }
 
-li.dsq-widget-item p{
-	font-size: 15px;
-	letter-spacing: .015em;
-	line-height: 20px;
-}
+	.comment-meta-cont {
+    	margin: auto;
+    	display: block;
+    	text-align:center;
+    	background-color: #A9E7F8;
+    	padding: 1px 5px 1px 5px;
+    	border-radius: 5px;
 
-p.dsq-widget-meta{
-	line-height: 20px !important;
-	color: #a4a4a4;
-	font-size: 11px
-}
 
-a.dsq-widget-user{
-	color: #92E2F9 ;
-	font-size: 14px;
-}
+	}
+
+	.comment-meta-cont p{
+		font-size: 10px !important;
+		font-weight: 300;
+		color: #ffffff;
+	}
+
+	.comment-meta-cont a{
+		font-size: 10px !important;
+		font-weight: 600;
+		color: #ffffff;
+	}
+
+	.comment-meta-cont a:hover{
+		font-size: 10px !important;
+		font-weight: 600;
+		color: #ffffff;
+
+	}
+		p.comment-content {
+			margin: 0px 0px 10px 0px;
+			display: block;
+			font-size: 20px;
+			line-height: 24px;
+			font-weight: 300;
+		}
+
+		.comment-author{
+			display: inline-block;
+		}
+
+		.comment-title{
+			display: inline-block;
+		}
+
+		.comment-time{
+			display: inline-block;
+		}
+
+
+
+
 
 
 

@@ -24,30 +24,6 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
         <?php x_get_view( 'global', 'main-menu' ); ?>
       </div>
 
-
-          <!-- Popup message -->
-          <div class="home-message">
-            <h5>x</h5>
-
-              <?php if(!is_user_logged_in()): ?>
-                <h2>Share and discuss stuff with people as curious as you.</h2>
-                  <p>
-
-                  </p>
-                <div class="home-btn">
-                  <a class="popup-register" href="#">Sign Up</a>
-                </div>
-              <?php endif;  ?>
-
-              <?php if(is_user_logged_in()): ?>
-                  <h2>Start a playlist and call it your username.</h2>
-                  <p>
-                    You'll be the only one who can add stuff to it.
-                  </p>
-              <?php endif;  ?>
-          </div>
-
-
 	<!--         jQuery form to submit media            -->
   	<div class="form-window">
 
@@ -101,6 +77,28 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
           <?php endif;  ?>
 	</div>
 
+  <!-- Popup message -->
+          <div class="home-message">
+            <h5>x</h5>
+
+              <?php if(!is_user_logged_in()): ?>
+                <h2>Share and discuss stuff with people as curious as you.</h2>
+                  <p>
+
+                  </p>
+                <div class="home-btn">
+                  <a class="popup-register" href="#">Sign Up</a>
+                </div>
+              <?php endif;  ?>
+
+              <?php if(is_user_logged_in()): ?>
+                  <h2>Start a playlist and call it your username.</h2>
+                  <p>
+                    You'll be the only one who can add stuff to it.
+                  </p>
+              <?php endif;  ?>
+          </div>
+
 
 
       <?php x_get_view( 'global', 'loop-filter' ); ?>
@@ -108,7 +106,8 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
 
       <!-- Comments -->
       <div class="comments-middle">
-            <script type="text/javascript" src="http://mumblingmillennials.disqus.com/recent_comments_widget.js?num_items=50&hide_mods=0&hide_avatars=0&avatar_size=32&excerpt_length=500"></script>
+        <ul>
+        </ul>
       </div>
 
 
@@ -132,6 +131,7 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
 
 
 </div>
+
 
 <?php get_footer(); ?>
 </html>
