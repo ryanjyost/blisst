@@ -519,7 +519,7 @@
 
 	$('#toggle-to-comments').click(function(){
 			$('.loop-middle').fadeOut('fast');
-			$('.comments-middle').fadeIn('slow');
+			$('.comments-middle').delay(300).fadeIn('slow');
 			$('#toggle-to-posts').removeClass('toggle-btn-active');
 			$('#toggle-to-posts').addClass('toggle-btn');
 			$(this).removeClass('toggle-btn');
@@ -527,8 +527,8 @@
 	});
 
 	$('#toggle-to-posts').click(function(){
-			$('.loop-middle').fadeIn('slow');
 			$('.comments-middle').fadeOut('fast');
+			$('.loop-middle').delay(300).fadeIn('slow');
 			$('#toggle-to-comments').removeClass('toggle-btn-active');
 			$('#toggle-to-comments').addClass('toggle-btn');
 			$(this).removeClass('toggle-btn');
