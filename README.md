@@ -1,2 +1,2 @@
 # blisst
-The theme for Blisst
+The theme for Blisst (www.blisst.net)
