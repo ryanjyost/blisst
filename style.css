@@ -42,6 +42,12 @@ footer, header, hgroup, menu, nav, section {
 body {
 
 }
+
+body, html {
+	height:100%;
+	overflow: hidden;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -117,7 +123,9 @@ html{
  ----------------------------------------------------------------------------------*/
 
 .site {
-	background-color:#f9f9f9;}
+	background-color:#f9f9f9;
+	height:100%; overflow:hidden;
+}
 
 .p {
 	color: #000000;
@@ -146,7 +154,9 @@ float:left;
 	padding: 0px 0px 0px 0px;}
 
 .body {
-	overflow-x: hidden;}
+	overflow-x: hidden;
+	overflow-y: hidden !important;
+}
 
 .element.style {
 	clear:none;
@@ -214,7 +224,7 @@ head{
 }
 
 body{
-	border-top:1vh solid #585858;
+	border-top:0vh solid #585858;
 
 }
 
@@ -1292,7 +1302,7 @@ p.toggle-btn-active{
 
 .comments-middle ul{
 	display: block;
-	background-color: #f9f9f9;
+	background-color: #ffffff;
 	width: 100%;
 }
 
@@ -1539,7 +1549,7 @@ padding:30px 0px 30px 0px;
  	width:18%;
  	background-color:#FAFAFA;
 	border-right:0px solid #f9f9f9;
-	height:98vh;
+	height:100vh;
 	overflow-x:hidden;
 	display:inline-block;
 
@@ -1734,10 +1744,6 @@ padding:30px 0px 30px 0px;
 
  ----------------------------------------------------------------------------------*/
 
-footer{
-	height:8vh;
-	border-top:2vh solid #585858;
-}
 
 
 
@@ -2256,7 +2262,7 @@ Userpro login
  	background-color:#ffffff;
  	overflow-y:scroll;
  	overflow-x: hidden;
- 	height:98.2vh;
+ 	height:100vh;
  	border-bottom:none !important;
  }
 

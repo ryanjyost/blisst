@@ -517,22 +517,24 @@
 
 	//switch from posts to comments
 
-	$('#toggle-to-comments').click(function(){
+	$('#toggle-to-comments').click(function(e){
 			$('.loop-middle').fadeOut('fast');
 			$('.comments-middle').delay(300).fadeIn('slow');
 			$('#toggle-to-posts').removeClass('toggle-btn-active');
 			$('#toggle-to-posts').addClass('toggle-btn');
 			$(this).removeClass('toggle-btn');
 			$(this).addClass('toggle-btn-active');
+			return false;
 	});
 
-	$('#toggle-to-posts').click(function(){
+	$('#toggle-to-posts').click(function(e){
 			$('.comments-middle').fadeOut('fast');
 			$('.loop-middle').delay(300).fadeIn('slow');
 			$('#toggle-to-comments').removeClass('toggle-btn-active');
 			$('#toggle-to-comments').addClass('toggle-btn');
 			$(this).removeClass('toggle-btn');
 			$(this).addClass('toggle-btn-active');
+			return false;
 	});
 
 
