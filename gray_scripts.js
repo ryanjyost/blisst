@@ -47,10 +47,10 @@
 				$('.share-button').click(function(){
 					$('body').on('keyup keypress', function(e) {
 					  var keyCode = e.keyCode || e.which;
-					  if (keyCode === 13) {
-					    e.preventDefault();
-					    return false;
-					  }
+					  //if (keyCode === 13) {
+					    //e.preventDefault();
+					    //return false;
+					  //}
 					})
 
 					//toggle text on the share button
@@ -540,10 +540,6 @@
 
 
 
-
-
-
-
 	// switch between post type icon and expand icon on hover
 	$('.loop-cont').hover(function(){
 		$(this).find('img').toggle();
@@ -615,7 +611,25 @@
 	});
 
 //================================================
+//Toggle for main side lists
 
+$('#toggle-to-users').click(function(e){
+			$('#topics-list').fadeOut('fast');
+			$('#users-list').delay(200).fadeIn('slow');
+			$('#toggle-to-topics').removeClass('toggle-lists-active');
+			$('#toggle-to-users').addClass('toggle-lists-active');
+
+			return false;
+});
+
+$('#toggle-to-topics').click(function(e){
+			$('#users-list').fadeOut('fast');
+			$('#topics-list').delay(200).fadeIn('slow');
+			$('#toggle-to-users').removeClass('toggle-lists-active');
+			$('#toggle-to-topics').addClass('toggle-lists-active');
+
+			return false;
+});
 
 
 

@@ -116,6 +116,7 @@ html{
 
 
 
+
 /*----------------------------------------------------------------------------------
 
  GENERAL
@@ -322,7 +323,7 @@ Top Menu
 .main-menu{
 	background-color: #ffffff;
     height: 6vh;
-    padding: 1vh 0px 0px 7% !important;
+    padding: 1vh 0px 0px 12% !important;
     margin: auto;
     width: 90%;
     display: block;
@@ -391,7 +392,7 @@ Top Menu
 	text-align: center;
 	font-size: 1.5em;
 	margin: .5vh 0% .5vh 6%;
-	padding: 1vh 0px 0vh 0px;
+	padding: .75vh 0px 0vh 0px;
 	border-radius: 5px;
 	cursor: pointer;
 }
@@ -403,6 +404,30 @@ Top Menu
 }
 
 .share-button a:hover{
+	color: #ffffff;
+}
+
+.home-button {
+	display: inline-block;
+	height: 5vh;
+	background-color:#92E2F9;
+	color: #ffffff;
+	width: 30%;
+	text-align: center;
+	font-size: 1.5em;
+	margin: .5vh 0% .5vh 6%;
+	padding: .75vh 0px 0vh 0px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.home-button a{
+	color: #ffffff;
+	width: 100%;
+    display: block;
+}
+
+.home-button a:hover{
 	color: #ffffff;
 }
 
@@ -656,15 +681,15 @@ Top Menu
 
 .form-window{
 	display:none;
-	height:70vh;
-	padding:20px 20px 0px 20px;
+	height:100vh;
+	padding:10vh 20px 0px 20px;
 	position:relative;
 	margin:0px 10px 0px 10px;
 }
 
 		.form-window input{
 			border-radius:5px;
-			width:80%;
+			width:70%;
 			height:40px;
 			font-size:16px;
 			margin:auto;
@@ -691,9 +716,24 @@ Top Menu
 			margin:auto;
 			font-size:15px;
 			display:block;
-			width:80%;
+			width:70%;
 			margin-top:5vh;
 			letter-spacing:.05em;
+
+		}
+
+		.form-window button{
+			display:block;
+			text-align:center;
+			font-weight:200 !important;
+			margin:auto;
+			margin-top:20px;
+			border-radius:3px!important;
+			font-weight:200 !important;
+			font-size:20px !important;
+			color:#ffffff !important;
+			border:none;
+			width:70%;
 
 		}
 
@@ -948,53 +988,15 @@ div #add-list{
 }
 
 
-/* Tiny MCE Editor */
+/* CKE Editor */
 
-
-.mce-caret{
-	border-top: 4px solid #a4a4a4 !important;
-	border-left: 4px solid transparent !important;
-	border-right: 4px solid transparent !important;
-}
-
-.mce-txt{
-	color: #a4a4a4 !important;
-}
-
-.mce-ico{
-	color: #a4a4a4 !important;
-}
-
-.mce-menubar .mce-menubtn{
-	background-color: #ffffff !important;
-}
-
-.mce-menubar{
-	border: none !important;
-	background-color: #ffffff !important;
-}
-
-.mce-content-body{
-	font-size: 20px;
-}
-
-.mce-tinymce mce-container mce-panel{
-	border-width: 0px !important;
+.textarea-cont{
+	width: 70%;
+	margin: auto !important;
+	position: relative;
 }
 
 
-.mce-panel{
-	background-color: #ffffff !important;
-}
-
-.mce-btn{
-	background-color: #ffffff !important;
-	border: none !important;
-}
-
-.mce-container, .mce-container-body{
-	border: 0px !important;
-}
 
 
 /*----------------------------------------------------------------------------------
@@ -1238,12 +1240,19 @@ div #add-list{
 	color: #a4a4a4;
 }
 
+.list-name{
+	display: inline;
+	float: right;
+	margin-right: 1%;
+	font-weight: 500;
+}
+
 p.toggle-btn  {
 	width: 40%;
 	color: #a4a4a4;
 	padding: 2px 5px 2px 5px !important;
 	border: 1px solid #f7f7f7;
-	border-radius: 20px;
+	border-radius: 3px;
 
 }
 
@@ -1254,7 +1263,7 @@ p.toggle-btn-active{
 	color: #ffffff;
 	background-color: #92E2F9;
 	padding: 2px 5px 2px 5px !important;
-	border-radius: 20px;
+	border-radius: 3px;
 }
 
 
@@ -1281,7 +1290,7 @@ p.toggle-btn-active{
 
 .comments-middle{
 	padding:0vh 2vh 0px 2vh;
-	width: 92%;
+	width: 86%;
 	margin: auto;
 	display: none;
 }
@@ -1292,7 +1301,7 @@ p.toggle-btn-active{
 	line-height: 18px;
 	font-weight: 300;
 	letter-spacing: .015em;
-	line-height: 16px;
+	line-height: 20px;
 }
 
 .comments-middle a{
@@ -1308,17 +1317,17 @@ p.toggle-btn-active{
 
 .comments-middle li{
 	background-color: #ffffff;
-	border: 1px solid #f2f2f2;
 	border-radius: 5px;
 	padding: 0px 0px 0px 0px;
 	margin: 25px 5px 5px 5px;
+	border-bottom: 1px solid #f2f2f2;
 }
 
 	.comment-meta-cont {
     	margin: auto;
     	display: block;
-    	text-align:center;
-    	background-color: #A9E7F8;
+    	text-align:left;
+    	background-color: #ffffff;
     	padding: 1px 5px 1px 5px;
     	border-radius: 2px;
 
@@ -1326,35 +1335,41 @@ p.toggle-btn-active{
 	}
 
 	.comment-meta-cont p{
-		font-size: 10px !important;
+		font-size: 16px !important;
 		font-weight: 300;
-		color: #ffffff;
+		color: #D8D8D8;
 	}
 
 	.comment-meta-cont a{
-		font-size: 10px !important;
+		font-size: 20px !important;
 		font-weight: 600;
-		color: #ffffff;
+		color: #2eccfa;
+		max-width: 500px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 
 	.comment-meta-cont a:hover{
-		font-size: 10px !important;
+		font-size: 20px !important;
 		font-weight: 600;
-		color: #ffffff;
+		text-decoration: underline;
 
 	}
 		p.comment-content {
-			margin: 5px 0px 0px 0px;
-			padding: 10px 20px 10px 20px;
+			margin: auto;
+			padding: 20px 20px 20px 20px;
 			display: block;
 			font-size: 20px;
 			line-height: 24px;
 			font-weight: 300;
-			border-bottom: 1px solid #f2f2f2;
+			width: 100%;
 		}
 
 		.comment-author{
 			display: inline-block;
+			overflow: hidden;
+			top: 0;
 		}
 
 		.comment-title{
@@ -1363,6 +1378,7 @@ p.toggle-btn-active{
 
 		.comment-time{
 			display: inline-block;
+			overflow: hidden;
 		}
 
 
@@ -1599,11 +1615,38 @@ padding:30px 0px 30px 0px;
 
  	.main-side-lists li:hover{
  		cursor: pointer;
- 		background-color: #f7f7f7;
-
-
-
+ 		padding-left: 7%;
  	}
+
+
+ 	.toggle-lists{
+ 		width: 80%;
+ 		margin: auto;
+ 		border: 1px solid #E6E6E6;
+ 		margin-top: 1vh;
+ 	}
+
+ 	.toggle-lists:hover{
+ 		cursor: default;
+ 	}
+
+ 	.toggle-lists p{
+ 		display: inline-block;
+ 		font-size: 12px;
+ 		width: 50%;
+ 		text-align: center;
+ 		line-height: 20px;
+ 		border-radius: 3px 3px 3px 3px;
+ 	}
+
+ 	.toggle-lists-active{
+ 		background-color: #FFA5A5;
+ 		color: #ffffff;
+ 	}
+
+
+ 	#topics-list{display:block;}
+ 	#users-list{display:none;}
 
 
 
@@ -1613,7 +1656,6 @@ padding:30px 0px 30px 0px;
  	#selected-list{
  		font-size: 1.5em;
  		font-weight: 500;
- 		background-color: #ffffff;
  		padding: 2vh 6% 2vh 6%;
  		position: relative;
  		color: #585858;
@@ -1915,21 +1957,7 @@ Page Area (if no middle/right column), e.g. home, about, etc.
 				margin-bottom:5vh;
 				}
 
-		.form-window button{
-			display:block;
-			text-align:center;
-			padding:8px 25px 8px 25px !important;
-			font-weight:200 !important;
-			margin:auto;
-			margin-top:20px;
-			border-radius:3px!important;
-			font-weight:200 !important;
-			font-size:20px !important;
-			color:#ffffff !important;
-			border:none;
-			width:80%;
 
-		}
 
 				.submit-form{
 					display:none;

@@ -92,7 +92,7 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
               <?php endif;  ?>
 
               <?php if(is_user_logged_in()): ?>
-                  <h2>Start a playlist and call it your username.</h2>
+                  <h2>Start a list and call it your username.</h2>
                   <p>
                     You'll be the only one who can add stuff to it.
                   </p>

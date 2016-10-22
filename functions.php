@@ -235,6 +235,30 @@ function save_comment_data() {
         } // end IF
 }
 
+/*
+*
+*  Create user list on registration (not working yet)
+*
+*/
+
+add_action( 'user_register', 'create_user_list', 10, 1 );
+
+function create_user_list( $user_id ) {
+
+    $user = get_user_by( 'user_id', $user_id );
+    $user_name = $user->name;
+    $new_list = array('cat_ID' => 0,
+      'cat_name' => $user_name,
+      'category_description' => '',
+      'category_nicename' => 'cat_name',
+      'category_parent' => '',
+      'taxonomy' => 'playlist' );
+
+
+    wp_insert_category($new_list, $wp_error );
+
+
+}
 
 
 

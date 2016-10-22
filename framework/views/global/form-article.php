@@ -94,7 +94,7 @@
 
                 <!-- Content and submission -->
                 <div id="step6_article">
-                      <textarea rows="7" placeholder="Why are you posting this?" type="textarea" id="description" value="" name="post_content"></textarea>
+                      <textarea rows="14" placeholder="Why are you posting this?" type="textarea" id="description" value="" name="post_content"></textarea>
 
                           <button type="submit" value="Add it" id="submit" name="submit">Post</button>
                           <div class="prev-submit">Go Back</div>
