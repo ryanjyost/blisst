@@ -453,7 +453,7 @@
 			//$(".share-button").text(id.toString());//test step value
 
 					//More
-					if($id=='main-menu-1'){
+					if($id=='main-menu-more'){
 						$active=1;
 					};
 
@@ -518,8 +518,8 @@
 	//switch from posts to comments
 
 	$('#toggle-to-comments').click(function(e){
-			$('.loop-middle').fadeOut('fast');
-			$('.comments-middle').delay(300).fadeIn('slow');
+			$('#loop-middle').fadeOut('fast');
+			$('#comments-middle').delay(300).fadeIn('slow');
 			$('#toggle-to-posts').removeClass('toggle-btn-active');
 			$('#toggle-to-posts').addClass('toggle-btn');
 			$(this).removeClass('toggle-btn');
@@ -528,8 +528,8 @@
 	});
 
 	$('#toggle-to-posts').click(function(e){
-			$('.comments-middle').fadeOut('fast');
-			$('.loop-middle').delay(300).fadeIn('slow');
+			$('#comments-middle').fadeOut('fast');
+			$('#loop-middle').delay(300).fadeIn('slow');
 			$('#toggle-to-comments').removeClass('toggle-btn-active');
 			$('#toggle-to-comments').addClass('toggle-btn');
 			$(this).removeClass('toggle-btn');
@@ -541,12 +541,12 @@
 
 
 	// switch between post type icon and expand icon on hover
-	$('.loop-cont').hover(function(){
+	$('.icon-cont').hover(function(){
 		$(this).find('img').toggle();
 	});
 
-	$('.loop-cont').find('img').click(function(){
-		$(this).parent().parent().find(".post-comment-box").slideToggle('fast');
+	$('.icon-cont').find('img').click(function(){
+		$(this).parent().parent().parent().find(".post-comment-box").slideToggle('fast');
 	})
 
 	$('.plus-icon').hover(function(){
@@ -632,6 +632,23 @@ $('#toggle-to-topics').click(function(e){
 });
 
 
+//================================================
+//Toggle hidden sidebar
+
+$('#main-menu-icon').click(function(){
+	$('.main-side').show();
+});
+
+$('#mini-menu-close').click(function(){
+	$('.main-side').hide();
+});
+
+//================================================
+//Toggle "More" on mini menu
+
+$('#mini-menu-more').click(function(){
+	$('#mini-menu-dropdown').slideToggle('fast');
+});
 
 
 
@@ -668,9 +685,7 @@ $('#toggle-to-topics').click(function(e){
 
 
 
-
-
-	});
+});
 })( jQuery );
 
 

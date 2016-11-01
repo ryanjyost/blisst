@@ -9,6 +9,39 @@
 <link href='https://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
 
 
+    <!-- Sidebar menu on media query (ipad and lower) -->
+    <div id="main-side-mini-menu">
+        <div id="mini-menu-signin">
+          <?php if (!is_front_page()): ?>
+             <a href = "<?php echo $redirect; ?>">Home</a>
+           <?php endif;  ?>
+
+          <?php if (!is_user_logged_in() && is_front_page()): ?>
+             <a class="popup-login" href="#">Sign In / Up</a>
+           <?php endif;  ?>
+
+           <?php if (is_user_logged_in() && is_front_page()): ?>
+              <a href="<?php echo wp_logout_url( $redirect ); ?>">Sign Out</a>
+           <?php endif;  ?>
+        </div>
+
+        <div id="mini-menu-more">More</div>
+        <div id="mini-menu-close">x</div>
+    </div>
+
+    <div  class="main-menu-dropdown" id="mini-menu-dropdown">
+                     <a href="<?php echo get_permalink( get_page_by_path( 'give-feedback' ) ) ?>">Give Feedback</a>
+                     <a href="<?php echo get_permalink( get_page_by_path( 'report-a-post' ) ) ?>">Report a Post</a>
+                     <a href="<?php echo get_permalink( get_page_by_path( 'contact-us' ) ) ?>">Contact Us</a>
+                     <a href="<?php echo get_permalink( get_page_by_path( 'code-of-conduct' ) ) ?>">Code of Conduct</a>
+                     <a href="<?php echo get_permalink( get_page_by_path( 'terms-of-use' ) ) ?>">Terms of Use</a>
+                    <a href="https://icons8.com/">Icons from Icons8</a>
+    </div>
+
+
+
+
+
     <!-- User Login -->
     <?php if (!is_user_logged_in()){ ?>
     	<div class="nav-logo">
@@ -20,12 +53,14 @@
     <?php if(is_user_logged_in()): ?>
          <!-- Dropdown to add list -->
         <div id="add-list">
-            <?php echo do_shortcode('[front-end-list]'); ?>
+            <?php echo do_shortcode('[front-end-cat]'); ?>
         </div>
     <?php endif;  ?>
 
 
-    <!--  Display current list -->
+
+
+    <!--  Display lists -->
     <div class ="main-side-lists">
 
 

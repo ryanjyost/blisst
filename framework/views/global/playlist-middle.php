@@ -14,7 +14,7 @@
         $list_name = $tax->name;
 
         $current_user = wp_get_current_user();
-        $username = $current_user ->user_login;
+        $username = $current_user->user_login;
   ?>
 
 
@@ -88,29 +88,26 @@
 
 
        <?php
-              //get playlist information for later
-                  $args = array( 'post_type' => array('article', 'essay', 'book', 'audio', 'video', 'study', 'speech', 'media'), 'posts_per_page' => -1,  'orderby' => 'date', 'order' => 'DESC', 'taxonomy' => 'playlist');
-
-                  $loop = new WP_Query( $args );
+            if(username_exists($list_name)){
+              //sets loop args for user
+              $args = array( 'post_type' => array('article', 'essay', 'book', 'audio', 'video', 'study', 'speech', 'media'), 'posts_per_page' => -1,  'orderby' => 'date', 'order' => 'DESC', 'author_name' =>  $list_name);
+            } else{
+              //sets loop args
+              $args = array( 'post_type' => array('article', 'essay', 'book', 'audio', 'video', 'study', 'speech', 'media'), 'posts_per_page' => -1,  'orderby' => 'date', 'order' => 'DESC', 'taxonomy' => 'playlist', 'term' => $tax->slug);
+            }
         ?>
 
             <!--  Query Media in Category    -->
             <?php
                   $post_type = array('article', 'essay', 'book', 'audio', 'video', 'study', 'speech', 'media', 'post');
 
+                    $posts = new WP_Query( $args );
 
+                    if( $posts->have_posts() && $post_type): while( $posts->have_posts() ) : $posts->the_post();
 
+                        x_get_view( 'global', 'loop-basic' );
 
-                      // Gets every "category" (term) in this taxonomy to get the respective posts
-                      $tax = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-
-                          $posts = new WP_Query( "taxonomy=playlist&term=$tax->slug" );
-
-                          if( $posts->have_posts() && $post_type): while( $posts->have_posts() ) : $posts->the_post();
-
-                              x_get_view( 'global', 'loop-basic' );
-
-                          endwhile; endif;
+                    endwhile; endif;
 
             ?>
     </div>

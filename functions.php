@@ -260,7 +260,20 @@ function create_user_list( $user_id ) {
 
 }
 
-
+// remove personal options block
+if(is_admin()){
+  remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+  add_action( 'personal_options', 'prefix_hide_personal_options' );
+}
+function prefix_hide_personal_options() {
+?>
+<script type="text/javascript">
+  jQuery(document).ready(function( $ ){
+    $("#your-profile .form-table:first, #your-profile h3:first").remove();
+  });
+</script>
+<?php
+}
 
 
 

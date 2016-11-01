@@ -9,11 +9,12 @@
 
 ?>
 
+<div class="main-menu">
+          <?php x_get_view( 'global', 'main-menu' ); ?>
+</div>
+
 <div class="search-middle">
 
-    <div class="main-menu">
-          <?php x_get_view( 'global', 'main-menu' ); ?>
-    </div>
 
    <div class="search-box">
       <form method="get" id="searchform" class="form-search-box" action="<?php echo esc_url( home_url( '/' ) ); ?>">

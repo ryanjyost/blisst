@@ -19,6 +19,7 @@
                   </a>
               </div>
 
+              <div class="icon-cont">
                   <!-- Plus icon by Icons8 -->
                   <img class="plus-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAA5UlEQVR4Xu3aQQ6DMAxEUbhljphbFrEqYmUhS5blx7okYWLnz0Q9j+HPOfz7DwKogOEKaIHhBeAQ1AJaoEiBtdbvOfXeu6QaSya9P5wAKkALOAMcgg8FUAAG+YAST1IyKSPECbLCsoAwJAwJQ8KQMNQpDL1P7aKrxPC00XQZtsIEeGErvBVFP1QBwfuFcAtkbyQnyAlygpwgJ9jJCaJAsgIwCIMwCIMwCIN/BaLxNRlGdX+UhEEYhEEYhMHJGMzG2dfxyi5Fvy44+z0CZCvabTwV0G3HsterArIV7TaeCui2Y9nrvQB44rBBDlyVAwAAAABJRU5ErkJggg==" width="40" height="40"">
 
@@ -63,19 +64,20 @@
 
                   <img class="post-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAFnklEQVR4Xu2d8ZmVOBTFEyhg7WDHChaTAlYr0A5WK9ixgh0r0A5WK3CtwGcBRKzAsQLHAkL2u7sz375hgHPJXnjAXP49IbycHyeQBHjWMDfv/bOU0mtr7Rlzl/tSrIkxvmya5iDRYMutxDn3VWEMutXUdf2I6+VYOTYQ732SOOBe66jrmu2lAlngLDg5EKkfsIBXsxyi22NI+cGO2Vw/YBa3Fqh0Lj8USCY8BZJp3Fy7KZC5nM2sd8Jd56RxinZZ8wOhI7DHKQpkGSCGexemQBRIpgMr2w1d1JE+1BxNSCZoZDjSFUim8UO7IcORrkAUiLADK6sOJQDpmhBhoMhwpCsQBSLswMqqQwlAuiZEGCgyHOmbBlJVVVUUxVNr7WNjzANjTHXUIHq44MoYc4gxfmqaphH2vrc6ZDjSNwnEe/+bMea8AwD5TWBeST0FouMQcr+qHpRl+d4YQ4nI2lJKb0MIL7J2ZuyEEoD0zSTkunv6aK2lrun/brQW8aRpGurSRDdkONI3AaSqqrOiKD4Lwbhp86Gu6yeiNIwxyHCkbwKI9/4j6qZSSt+MMZdHDTqz1v48ZnhK6VUI4UISCjIc6asH4px7bq39c8S0dzHGi6ZpjmH8U7yqqsdlWdLF/2nf/imlq7ZtH0p2XchwpG8ByOCjqimlFyGEt+gMd85dWGv/GIDyMoTwBtXB1ZHhSF81kOsznLqrO9vU7sZ7/9dAUtjr2hwoyHCkrxqIc+6Ntfb37o+k60XbttWUroZuDMqy/NrX4BgjdVt3ujwOgG4ZZDjSVw3Ee/+5b/A3NR03jXTONdbaX7qNvr4FFnltABmO9LUDoXHCTz0GPsqZCnHOHay1vyqQnOz/e5dE3UyVUqI5Khqd00tBVyGE4zkrdu0KhG3VMgUVyDI+s4/inPveN9qPMWZ1gX0HRtcIpK/6GsJ2mlGQ3oU0xtDE5K2N7thCCGLvRyLDkX6fgAxNv7yr6/o5gymrCDIc6fcCyNj0i+QtL5mJDEf67oGMzRSnlD6FELLXVvQawuo0bhcamymWvJjfHBUlAOm7TgiYVBSfetcuayQxYGJy8lwYN5woAUjfZUJo7b0oCpq2713unaOr0i5r5JT13tN4g8Ydd7aUkuj6R/cAKAFI311CnHPn1trXAw37UNd1Lyhul4TKIcORvisg9GRKWZY0Zd+3/Ygxnk1ZQ0Hm623v+EWcrhv0ZErvNIj0AHDop6AEIH03CRlaXaQG5i5oaUJyHPhv3aR3eTal9CV3/STn56AEIH0XCRlLx5y3uHoNGTh9htbejTGiM7mcxKAEIH0XCek28qZR3Oe2OEZzyyDDkb5rIEvdWR2biAxHugLhnvrMcshwpCsQptHcYshwpCsQrtPMcshwpO8CCK17dF9XsNZexhjP554q6RqIDEf6LoAwT95FiiHDka5AhDEhw5GuQBSIsAMrqw4lAOmaEGGgyHCkbx4IeEN39hVCvcvqOACeLhF/EA4FCiUA6XtICL1pO/QeogLhfocWnWlcXRPScSo3glzDUTkFokBGzxF0giJdryEoghN1ZDjS9wCEHv+hjwL0bQfpb5kgPshwpG8eCDJoaR0ZjnQFIkwMGY50BaJAhB1YWXUoAUjXhAgDRYYjXYEoEGEHVlYdSgDSNSHCQJHhSFcgCkTYgZVVhxKAdE2IMFBkONIViAIRdmBl1aEEIF0TIgwUGY50BaJAhB1YWXUoAUjXhAgDRYYjXRyIcPs2X133KRwFcmKkiwNxzl2i/+k4sScnO3zfRwuWSMizlBL9HcSdb6qfzIkVHJhgtG1Lb3Dd+qb87EBQ23N/AKp3q3quH+z/U0fG5P4AVO9W9Vw/FMhMxBXITMbmVrs6ILkN2et+3LcFZuuy9mpsbrsWB6LjlGFUUz6uJpkQHaf0MBkapwzh+xvWHgG/ykjRfQAAAABJRU5ErkJggg==" width="40" height="40">
                   <?php } ?>
+              </div>
 
-                  <!-- Author and source   -->
-                  <?php
-                      // Source Meta
-                      $source = get_field('source');
-                      $article_author = get_field('article_author');
-                  ?>
+              <!-- Author and source   -->
+              <?php
+                  // Source Meta
+                  $source = get_field('source');
+                  $article_author = get_field('article_author');
+              ?>
 
-                  <br>
+              <br>
 
-                  <?php if(get_post_type($post) !== 'mumble') { ?>
-                        <div class="loop-author"><?php echo "$article_author";?></div> <div class="loop-author"></div><div class="loop-source"><?php echo "$source";?></div>
-                  <?php } ?>
+              <?php if(get_post_type($post) !== 'mumble') { ?>
+                    <div class="loop-author"><?php echo "$article_author";?></div> <div class="loop-author"></div><div class="loop-source"><?php echo "$source";?></div>
+              <?php } ?>
 
 
               <!-- Apply source link to the post title -->
@@ -91,7 +93,7 @@
               <div class="post-comment-box">
                   <?php echo $post->post_content; ?>
                   <p><a class="loop-post-link" href="<?php echo get_permalink($post); ?>"> Join the discussion </a>posted by <?php
-                    $author = get_the_author();
+                    $author = get_the_author_meta('login');
                     $date = human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago';
                     echo $author; echo " " ; echo $date; ?>
                   </p>

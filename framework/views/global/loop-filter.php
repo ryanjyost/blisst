@@ -13,9 +13,6 @@
 
    <!-- Filter Buttons -->
    <div class = "loop-filter">
-   		<p id="expand-all"> Expand all </p>
-
-
    	<?php if($tax == '') : ?>
    		<!-- Toggle Between Posts and Comments -->
 	    <div class = "toggle-cont">
@@ -25,7 +22,7 @@
 
    	<?php if($tax != '') : ?>
    		<!-- Toggle Between Posts and Comments -->
-	    <div class = "list-name">
+      <div class = "list-name">
             <?php // Get the current list
                $tax = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
                $tax_name = $tax->name;
@@ -34,9 +31,12 @@
         <?php if($tax){ ?>
                   <p><?php echo $tax_name; ?></p>
          <?php } ?>
-
        </div>
+
    	<?php endif;  ?>
+
+    <p id="expand-all"> Expand all </p>
+
 
    </div>
 

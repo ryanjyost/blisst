@@ -94,7 +94,7 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
               <?php if(is_user_logged_in()): ?>
                   <h2>Start a list and call it your username.</h2>
                   <p>
-                    You'll be the only one who can add stuff to it.
+                    Anything you post will be added to it.
                   </p>
               <?php endif;  ?>
           </div>
@@ -105,14 +105,14 @@ $is_filterable_index = is_home() && x_get_option( 'x_ethos_filterable_index_enab
 
 
       <!-- Comments -->
-      <div class="comments-middle">
+      <div class="home-middle" id="comments-middle">
         <ul>
         </ul>
       </div>
 
 
       <!-- Posts  -->
-      <div class="loop-middle">
+      <div class="home-middle"  id="loop-middle">
 			       <?php
 		                  $args = array( 'post_type' => array('article', 'essay', 'book', 'audio', 'video', 'study', 'speech', 'media'), 'posts_per_page' => 100,  'orderby' => 'date', 'order' => 'DESC');
 		                  $loop = new WP_Query( $args );
